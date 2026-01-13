@@ -1567,7 +1567,7 @@ button[type="submit"]:hover,
 
 .site-footer__logo {
   display: block;
-  height: 52px;
+  height: 36px;
   width: auto;
   margin-bottom: 16px;
   opacity: 0.9;
@@ -1652,7 +1652,7 @@ button[type="submit"]:hover,
   }
   
   .site-footer__logo {
-    height: 48px;
+    height: 32px;
   }
   
   .site-footer__bottom {
