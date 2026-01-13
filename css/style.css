@@ -2267,4 +2267,579 @@ button[type="submit"]:hover,
   }
 }
 
-/* End of CSS */
+/* ============================================
+   ABOUT PAGE - CONSULTING-GRADE STYLING
+   ============================================ */
+
+/* About Hero */
+.about-hero {
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+}
+
+.about-hero h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-hero .hero-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Company Overview Section */
+.company-overview-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.about-content-enhanced {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.overview-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Founder & Leadership Section */
+.founder-section {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.founder-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.founder-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.founder-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.founder-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: white;
+}
+
+.founder-info h3 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.founder-info .founder-title {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.founder-bio {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.experience-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.experience-item {
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 3px solid #0078d4;
+}
+
+.experience-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.experience-item p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.founder-philosophy {
+  padding: 25px;
+  background: #f0f7ff;
+  border-radius: 8px;
+  border-left: 4px solid #0078d4;
+}
+
+.founder-philosophy p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Why We Exist Section */
+.why-exist-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.why-exist-section .about-content-enhanced {
+  max-width: 900px;
+}
+
+.why-exist-section .overview-text {
+  margin-top: 30px;
+}
+
+/* Microsoft Ecosystem Section (already exists, enhanced) */
+.expertise-card-enhanced {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.expertise-icon-pro {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.expertise-icon-pro svg {
+  width: 36px;
+  height: 36px;
+  stroke: white;
+}
+
+.expertise-card-enhanced h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.expertise-card-enhanced p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Consulting Philosophy Grid */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.philosophy-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-number {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(0, 120, 212, 0.1);
+  line-height: 1;
+}
+
+.philosophy-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  padding-right: 60px;
+}
+
+.philosophy-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Responsible AI Principles Grid */
+.principles-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.principle-card-enhanced {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.principle-card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.principle-icon-pro {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.principle-icon-pro svg {
+  width: 32px;
+  height: 32px;
+  stroke: white;
+}
+
+.principle-card-enhanced h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.principle-card-enhanced p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Global Delivery Section */
+.global-delivery-section {
+  padding: 80px 0;
+}
+
+.global-delivery-section .section-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto 50px;
+}
+
+.delivery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.delivery-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.delivery-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke: white;
+}
+
+.delivery-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.delivery-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* Values Section */
+.values-section {
+  padding: 80px 0;
+  background: #f9fafb;
+}
+
+.values-section .section-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+  max-width: 700px;
+  margin: 20px auto 50px;
+}
+
+.values-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.value-item-enhanced {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.value-number {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 56px;
+  font-weight: 700;
+  color: rgba(0, 120, 212, 0.08);
+  line-height: 1;
+}
+
+.value-item-enhanced h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  padding-right: 80px;
+}
+
+.value-item-enhanced p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin: 0;
+}
+
+/* About CTA */
+.about-cta {
+  padding: 80px 0;
+}
+
+.about-cta p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 700px;
+  margin: 20px auto 30px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - ABOUT PAGE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .delivery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .principles-grid-enhanced {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 60px 0;
+  }
+  
+  .about-hero h2 {
+    font-size: 32px;
+  }
+  
+  .about-hero .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  .about-section-title {
+    font-size: 28px;
+  }
+  
+  .company-overview-section,
+  .founder-section,
+  .why-exist-section,
+  .global-delivery-section,
+  .values-section,
+  .about-cta {
+    padding: 60px 0;
+  }
+  
+  .founder-card {
+    padding: 35px 25px;
+  }
+  
+  .founder-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .founder-info h3 {
+    font-size: 26px;
+  }
+  
+  .experience-highlights {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .principles-grid-enhanced {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .delivery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .values-grid-enhanced {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .philosophy-number,
+  .value-number {
+    font-size: 42px;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .value-item-enhanced h4,
+  .philosophy-card h4 {
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h2 {
+    font-size: 28px;
+  }
+  
+  .about-hero .hero-subtitle {
+    font-size: 16px;
+  }
+  
+  .founder-icon,
+  .delivery-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .founder-icon svg,
+  .delivery-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
