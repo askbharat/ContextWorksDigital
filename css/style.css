@@ -980,6 +980,241 @@ button[type="submit"]:hover,
 }
 
 /* =========================
+   INDUSTRIES PAGE
+========================= */
+
+/* Industries Hero */
+.industries-hero {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-white) 100%);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.industries-hero .hero-subtitle {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
+}
+
+/* Industry Context Section */
+.industry-context-section {
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.industry-context {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.industry-context p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.industry-context p:last-child {
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Industry Sections */
+.industry-section {
+  padding: var(--space-2xl) 0;
+}
+
+.industry-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.industry-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Industry Card Header */
+.industry-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, rgba(0, 120, 212, 0.03), rgba(0, 120, 212, 0.01));
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.industry-icon-pro {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-lg);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.industry-title-group {
+  flex: 1;
+}
+
+.industry-title-group h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: var(--line-height-tight);
+}
+
+.industry-challenge {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Industry Card Body */
+.industry-card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+}
+
+.industry-column h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.industry-help-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.industry-help-list li {
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+.industry-help-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.why-matters-content p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.why-matters-content p:last-child {
+  margin-bottom: 0;
+  color: var(--color-text);
+}
+
+/* Cross-Industry Principles Section */
+.section-principles {
+  background: linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg-white) 100%);
+  border-top: 2px solid var(--color-border-light);
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.principle-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.principle-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.principle-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-md);
+  color: white;
+}
+
+.principle-card h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.principle-card p {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Industries CTA */
+.industries-cta {
+  text-align: center;
+}
+
+.industries-cta h3 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-md);
+}
+
+.industries-cta p {
+  font-size: var(--font-size-lg);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* =========================
    FOOTER
 ========================= */
 .footer {
@@ -1964,6 +2199,30 @@ button[type="submit"]:hover,
   
   .tech-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  
+  /* Industries Page Responsive */
+  .industry-card-header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .industry-icon-pro {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .industry-title-group h3 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .industry-card-body {
+    grid-template-columns: 1fr;
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr;
   }
 }
 

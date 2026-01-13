@@ -28,101 +28,63 @@
     </div>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
+  <!-- Industries Hero -->
+  <section class="page-hero industries-hero">
     <div class="container">
       <h2>Industries We Serve</h2>
-      <p>Specialized Microsoft AI and automation expertise for regulated professional service organizations</p>
+      <p class="hero-subtitle">
+        Consulting-led AI and automation solutions tailored to regulated and professional environments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Industry Context Section -->
+  <section class="section section-white industry-context-section">
+    <div class="container">
+      <div class="industry-context">
+        <p>
+          Effective AI adoption requires more than technical capability—it demands deep understanding of industry-specific workflows, risk profiles, and compliance requirements. A one-size-fits-all approach fails in regulated environments where trust, accountability, and governance are non-negotiable.
+        </p>
+        <p>
+          We design Microsoft-aligned AI and automation solutions with industry context at the center, ensuring every implementation respects the unique constraints and opportunities of your domain.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Industry 1: Healthcare -->
-  <section id="healthcare" class="industry-detail section-white">
+  <section id="healthcare" class="industry-section section-light">
     <div class="container">
-      <div class="industry-header">
-        <div class="industry-icon">🏥</div>
-        <h3>Healthcare & Clinical Practices</h3>
-      </div>
-      
-      <div class="industry-content">
-        <div class="industry-section">
-          <h4>Common Challenges</h4>
-          <ul class="industry-list">
-            <li>Manual patient intake and registration processes</li>
-            <li>Fragmented systems for scheduling, billing, and clinical notes</li>
-            <li>Staff time consumed by insurance verification and prior authorizations</li>
-            <li>Difficulty maintaining HIPAA compliance with growing data volumes</li>
-            <li>Limited visibility into patient communication workflows</li>
-            <li>Paper-based or disconnected referral management</li>
-          </ul>
-        </div>
-
-        <div class="industry-section">
-          <h4>How AI & Automation Helps</h4>
-          <div class="solutions-grid">
-            <div class="solution">
-              <strong>Automated Patient Intake</strong>
-              <p>Power Automate workflows to collect patient information, verify insurance, and update EMR systems automatically.</p>
-            </div>
-            <div class="solution">
-              <strong>Appointment Management</strong>
-              <p>Automated reminders, rescheduling workflows, and waitlist management integrated with your scheduling system.</p>
-            </div>
-            <div class="solution">
-              <strong>Document Processing</strong>
-              <p>Azure AI Document Intelligence to extract data from referrals, lab results, and insurance forms.</p>
-            </div>
-            <div class="solution">
-              <strong>Staff Support Chatbot</strong>
-              <p>Copilot Studio bot for internal staff to quickly find policies, protocols, and administrative information.</p>
-            </div>
+      <div class="industry-card">
+        <div class="industry-card-header">
+          <div class="industry-icon-pro">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="industry-title-group">
+            <h3>Healthcare & Clinical Practices</h3>
+            <p class="industry-challenge">Administrative burden and compliance complexity limit clinical focus and patient care quality.</p>
           </div>
         </div>
 
-        <div class="industry-section">
-          <h4>Compliance Considerations</h4>
-          <div class="compliance-box">
-            <h5>HIPAA-Aware Design</h5>
-            <ul>
-              <li><strong>Data Encryption:</strong> End-to-end encryption for PHI in transit and at rest</li>
-              <li><strong>Access Controls:</strong> Role-based access with audit logging of all data interactions</li>
-              <li><strong>Business Associate Agreements:</strong> Microsoft 365 and Azure covered under BAA</li>
-              <li><strong>Data Residency:</strong> Azure regions configured for US data storage requirements</li>
-              <li><strong>Audit Trails:</strong> Complete logging of automated workflows accessing patient data</li>
+        <div class="industry-card-body">
+          <div class="industry-column">
+            <h4>What We Help With</h4>
+            <ul class="industry-help-list">
+              <li>Automating patient intake, registration, and insurance verification</li>
+              <li>Clinical workflow automation with HIPAA-aware design</li>
+              <li>Document processing for referrals, lab results, and insurance forms</li>
+              <li>Staff support systems for policy and protocol access</li>
+              <li>Appointment management and patient communication workflows</li>
             </ul>
           </div>
-        </div>
 
-        <div class="industry-section">
-          <h4>Typical Use Cases</h4>
-          <div class="use-cases">
-            <div class="use-case">
-              <span class="use-case-icon">📋</span>
-              <div>
-                <strong>Patient Onboarding</strong>
-                <p>Automated collection of patient forms, insurance verification, and medical history intake</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">📧</span>
-              <div>
-                <strong>Referral Management</strong>
-                <p>Tracking referrals between specialists, automated follow-ups, and status updates</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">💬</span>
-              <div>
-                <strong>Patient Communication</strong>
-                <p>Secure messaging workflows for appointment reminders, test results, and care instructions</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">📊</span>
-              <div>
-                <strong>Quality Reporting</strong>
-                <p>Automated extraction of clinical data for quality measures and regulatory reporting</p>
-              </div>
+          <div class="industry-column">
+            <h4>Why This Matters</h4>
+            <div class="why-matters-content">
+              <p>Healthcare AI must prioritize patient safety, data privacy, and regulatory compliance. Automation that bypasses clinical judgment or exposes PHI creates unacceptable risk.</p>
+              <p>Our approach ensures AI assists administrative workflows while maintaining strict separation from clinical decision-making, with full HIPAA compliance, audit trails, and human oversight at every critical point.</p>
             </div>
           </div>
         </div>
@@ -131,92 +93,40 @@
   </section>
 
   <!-- Industry 2: Legal & Professional Services -->
-  <section id="legal" class="industry-detail section-grey">
+  <section id="legal" class="industry-section section-white">
     <div class="container">
-      <div class="industry-header">
-        <div class="industry-icon">⚖️</div>
-        <h3>Legal & Professional Services</h3>
-      </div>
-      
-      <div class="industry-content">
-        <div class="industry-section">
-          <h4>Common Challenges</h4>
-          <ul class="industry-list">
-            <li>Manual document review and contract analysis consuming billable hours</li>
-            <li>Matter management across disconnected systems and email</li>
-            <li>Time tracking and billing inefficiencies</li>
-            <li>Client intake processes requiring multiple touchpoints</li>
-            <li>Document version control and collaboration challenges</li>
-            <li>Difficulty maintaining client confidentiality with increasing data volumes</li>
-          </ul>
-        </div>
-
-        <div class="industry-section">
-          <h4>How AI & Automation Helps</h4>
-          <div class="solutions-grid">
-            <div class="solution">
-              <strong>Document Automation</strong>
-              <p>Power Automate workflows to generate contracts, engagement letters, and standard documents from templates.</p>
-            </div>
-            <div class="solution">
-              <strong>Matter Management</strong>
-              <p>Automated matter opening, deadline tracking, and client communication workflows integrated with your practice management system.</p>
-            </div>
-            <div class="solution">
-              <strong>Contract Analysis</strong>
-              <p>Azure AI to extract key terms, obligations, and dates from contracts for review and risk assessment.</p>
-            </div>
-            <div class="solution">
-              <strong>Client Portal Automation</strong>
-              <p>Secure document sharing and status update workflows reducing administrative overhead.</p>
-            </div>
+      <div class="industry-card">
+        <div class="industry-card-header">
+          <div class="industry-icon-pro">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="industry-title-group">
+            <h3>Legal & Professional Services</h3>
+            <p class="industry-challenge">Knowledge work automation must maintain professional accountability, privilege, and ethical standards.</p>
           </div>
         </div>
 
-        <div class="industry-section">
-          <h4>Compliance Considerations</h4>
-          <div class="compliance-box">
-            <h5>Professional Privilege & Data Security</h5>
-            <ul>
-              <li><strong>Client Confidentiality:</strong> Data isolation with Microsoft 365 sensitivity labels and DLP policies</li>
-              <li><strong>Ethical AI Usage:</strong> Human review requirements for AI-assisted legal analysis</li>
-              <li><strong>Document Retention:</strong> Automated retention policies aligned with legal and regulatory requirements</li>
-              <li><strong>Conflict Checks:</strong> Integration with conflict management systems to prevent ethical violations</li>
-              <li><strong>Bar Association Compliance:</strong> Solutions designed with awareness of legal technology ethics rules</li>
+        <div class="industry-card-body">
+          <div class="industry-column">
+            <h4>What We Help With</h4>
+            <ul class="industry-help-list">
+              <li>Document automation for contracts, engagement letters, and standard forms</li>
+              <li>Matter management workflows with deadline tracking and escalation</li>
+              <li>Contract analysis and key term extraction with human review controls</li>
+              <li>Client portal automation for secure document sharing</li>
+              <li>Time and billing integration with practice management systems</li>
             </ul>
           </div>
-        </div>
 
-        <div class="industry-section">
-          <h4>Typical Use Cases</h4>
-          <div class="use-cases">
-            <div class="use-case">
-              <span class="use-case-icon">📝</span>
-              <div>
-                <strong>Client Intake & Onboarding</strong>
-                <p>Automated conflict checks, engagement letter generation, and matter setup workflows</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">⏰</span>
-              <div>
-                <strong>Deadline Management</strong>
-                <p>Automated calendar entries, reminder workflows, and escalation for critical deadlines</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">🔍</span>
-              <div>
-                <strong>Document Review Assistance</strong>
-                <p>AI-powered extraction of key clauses and terms to accelerate contract review</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">💼</span>
-              <div>
-                <strong>Time & Billing Automation</strong>
-                <p>Integration between time tracking, matter management, and billing systems</p>
-              </div>
+          <div class="industry-column">
+            <h4>Why This Matters</h4>
+            <div class="why-matters-content">
+              <p>Legal AI carries unique risks: incorrect analysis can lead to malpractice exposure, and data leakage can violate attorney-client privilege. Governance failures undermine trust and professional standing.</p>
+              <p>We design automation with mandatory human review checkpoints, strict data isolation, conflict management integration, and audit trails that support professional ethics rules and bar association compliance requirements.</p>
             </div>
           </div>
         </div>
@@ -225,92 +135,39 @@
   </section>
 
   <!-- Industry 3: Accounting & Consulting Firms -->
-  <section id="accounting" class="industry-detail section-white">
+  <section id="accounting" class="industry-section section-light">
     <div class="container">
-      <div class="industry-header">
-        <div class="industry-icon">📊</div>
-        <h3>Accounting & Consulting Firms</h3>
-      </div>
-      
-      <div class="industry-content">
-        <div class="industry-section">
-          <h4>Common Challenges</h4>
-          <ul class="industry-list">
-            <li>Manual data entry from client financial documents and receipts</li>
-            <li>Client onboarding requiring repetitive data collection</li>
-            <li>Seasonal workload spikes overwhelming staff capacity</li>
-            <li>Document requests and client communication consuming non-billable time</li>
-            <li>Difficulty maintaining data security across multiple client engagements</li>
-            <li>Inconsistent workflows between partners and teams</li>
-          </ul>
-        </div>
-
-        <div class="industry-section">
-          <h4>How AI & Automation Helps</h4>
-          <div class="solutions-grid">
-            <div class="solution">
-              <strong>Client Onboarding Automation</strong>
-              <p>Power Automate workflows to collect client information, engagement letters, and initial documents.</p>
-            </div>
-            <div class="solution">
-              <strong>Document Processing</strong>
-              <p>Azure AI Document Intelligence to extract data from invoices, receipts, and financial statements.</p>
-            </div>
-            <div class="solution">
-              <strong>Client Communication Hub</strong>
-              <p>Automated document requests, status updates, and secure file sharing workflows.</p>
-            </div>
-            <div class="solution">
-              <strong>Workflow Standardization</strong>
-              <p>Consistent engagement processes across teams with automated task assignment and tracking.</p>
-            </div>
+      <div class="industry-card">
+        <div class="industry-card-header">
+          <div class="industry-icon-pro">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="industry-title-group">
+            <h3>Accounting & Consulting Firms</h3>
+            <p class="industry-challenge">Seasonal workload spikes and manual processes constrain capacity, while client data security and independence standards must be maintained.</p>
           </div>
         </div>
 
-        <div class="industry-section">
-          <h4>Compliance Considerations</h4>
-          <div class="compliance-box">
-            <h5>Financial Data Protection & Professional Standards</h5>
-            <ul>
-              <li><strong>Client Data Isolation:</strong> Multi-tenant architecture preventing cross-client data access</li>
-              <li><strong>SOC 2 Alignment:</strong> Security controls aligned with SOC 2 requirements for service organizations</li>
-              <li><strong>GDPR/CCPA Compliance:</strong> Data residency and privacy controls for international clients</li>
-              <li><strong>Audit Trail Requirements:</strong> Complete logging of data access and processing activities</li>
-              <li><strong>Professional Independence:</strong> AI solutions designed to maintain CPA independence standards</li>
+        <div class="industry-card-body">
+          <div class="industry-column">
+            <h4>What We Help With</h4>
+            <ul class="industry-help-list">
+              <li>Client onboarding automation with engagement letter workflows</li>
+              <li>Document processing for invoices, receipts, and financial statements</li>
+              <li>Client communication hubs for document requests and status updates</li>
+              <li>Workflow standardization across teams and partners</li>
+              <li>Microsoft Copilot readiness for productivity without data leakage</li>
             </ul>
           </div>
-        </div>
 
-        <div class="industry-section">
-          <h4>Typical Use Cases</h4>
-          <div class="use-cases">
-            <div class="use-case">
-              <span class="use-case-icon">📄</span>
-              <div>
-                <strong>Client Document Collection</strong>
-                <p>Automated requests for tax documents, financial statements, and supporting materials</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">🤖</span>
-              <div>
-                <strong>Data Entry Automation</strong>
-                <p>AI extraction of financial data from documents directly into accounting systems</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">📅</span>
-              <div>
-                <strong>Engagement Management</strong>
-                <p>Automated engagement letters, project tracking, and milestone notifications</p>
-              </div>
-            </div>
-            <div class="use-case">
-              <span class="use-case-icon">💬</span>
-              <div>
-                <strong>Client Support Chatbot</strong>
-                <p>Copilot Studio bot answering common client questions about processes and timelines</p>
-              </div>
+          <div class="industry-column">
+            <h4>Why This Matters</h4>
+            <div class="why-matters-content">
+              <p>Accounting firms handle sensitive financial data for multiple clients simultaneously. AI systems that allow cross-client data access or compromise professional independence create malpractice risk and regulatory exposure.</p>
+              <p>We implement multi-tenant isolation, SOC 2-aligned controls, audit trail logging, and solutions that respect CPA independence standards while enabling productivity gains during peak seasons.</p>
             </div>
           </div>
         </div>
@@ -318,12 +175,111 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="section section-cta">
+  <!-- Industry 4: Enterprise IT & Operations -->
+  <section id="enterprise-it" class="industry-section section-white">
     <div class="container">
-      <h3>Ready to Explore AI for Your Industry?</h3>
-      <p>Let's discuss the specific challenges and compliance requirements for your organization.</p>
-      <a href="contact.html" class="btn-primary-large">Schedule a Discovery Call</a>
+      <div class="industry-card">
+        <div class="industry-card-header">
+          <div class="industry-icon-pro">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <div class="industry-title-group">
+            <h3>Enterprise IT & Operations Teams</h3>
+            <p class="industry-challenge">Scaling automation across the enterprise requires integration strategy, governance frameworks, and cost control.</p>
+          </div>
+        </div>
+
+        <div class="industry-card-body">
+          <div class="industry-column">
+            <h4>What We Help With</h4>
+            <ul class="industry-help-list">
+              <li>Enterprise-wide automation strategy and platform governance</li>
+              <li>Integration architecture for legacy systems and Microsoft 365</li>
+              <li>Center of Excellence (CoE) setup for Power Platform</li>
+              <li>Cost management and licensing optimization</li>
+              <li>Security, compliance, and data loss prevention controls</li>
+            </ul>
+          </div>
+
+          <div class="industry-column">
+            <h4>Why This Matters</h4>
+            <div class="why-matters-content">
+              <p>Enterprise IT teams face pressure to enable productivity while managing security, compliance, and cost at scale. Ungoverned AI adoption leads to shadow IT, data exposure, and budget overruns.</p>
+              <p>We help establish governed automation programs with clear policies, monitoring dashboards, training frameworks, and integration patterns that enable business units to move fast without creating risk or technical debt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Industry Principles -->
+  <section class="section section-principles">
+    <div class="container">
+      <h3 class="section-title">What Stays Consistent Across All Industries</h3>
+      <p class="section-intro">
+        Regardless of industry, our consulting approach is grounded in four non-negotiable principles.
+      </p>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <div class="principle-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h4>Compliance-First Design</h4>
+          <p>Every solution is architected with regulatory requirements, data sovereignty, and industry standards embedded from day one—not retrofitted later.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h4>Human-in-the-Loop AI</h4>
+          <p>AI assists, humans decide. We design mandatory review checkpoints and override mechanisms for all critical workflows and decisions.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <h4>Microsoft-Aligned Architecture</h4>
+          <p>We build on Microsoft 365, Power Platform, and Azure—ensuring enterprise support, security certifications, and long-term platform viability.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h4>Fixed-Scope, Low-Risk Pilots</h4>
+          <p>We start with defined pilot projects that prove value before scaling, avoiding open-ended engagements and minimizing organizational disruption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section section-dark cta-section industries-cta">
+    <div class="container">
+      <h3>Not Sure How AI Fits Your Industry Context?</h3>
+      <p>Let's start with a discovery conversation to explore your workflows, compliance requirements, and opportunities for responsible automation.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn-primary">Discuss Your Industry Use Case</a>
+      </div>
     </div>
   </section>
 
