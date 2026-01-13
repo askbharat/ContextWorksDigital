@@ -226,6 +226,11 @@ p {
 }
 
 /* Logo Styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   display: block;
   height: 42px;
