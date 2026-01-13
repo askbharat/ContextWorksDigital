@@ -1,17 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
-  <!-- "CW" in stylized square -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" fill="none">
+  <!-- Stylized CW Logo Mark -->
   <g id="logo-mark">
-    <rect x="8" y="12" width="36" height="36" rx="4" fill="#0066B8"/>
-    <text x="26" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">CW</text>
+    <!-- C in teal/cyan -->
+    <path d="M30 20 Q10 20 10 40 Q10 60 30 60 L35 60 Q45 60 45 50 L45 45 Q42 45 42 48 Q42 55 35 55 L30 55 Q20 55 20 40 Q20 25 30 25 L35 25 Q42 25 42 32 Q42 35 45 35 L45 30 Q45 20 35 20 Z" fill="#3EBEAA"/>
+    
+    <!-- W in orange (overlapping and integrated) -->
+    <path d="M38 20 L45 20 L50 45 L55 20 L62 20 L67 45 L72 20 L78 20 L70 60 L63 60 L58 35 L53 60 L46 60 Z" fill="#F5A623"/>
   </g>
   
-  <!-- Company Name -->
-  <g id="company-text">
-    <text x="54" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#0066B8">
-      ContextWorks
-    </text>
-    <text x="54" y="45" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="400" fill="#5E5E5E">
-      Digital
-    </text>
+  <!-- Company Text -->
+  <g id="company-name">
+    <!-- ContextWorks in teal -->
+    <text x="95" y="47" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="400" fill="#3EBEAA" letter-spacing="-0.5">ContextWorks</text>
+    
+    <!-- Digital Systems in gray -->
+    <text x="95" y="68" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="300" fill="#B3B3B3" letter-spacing="0.5">Digital Systems</text>
   </g>
 </svg>
