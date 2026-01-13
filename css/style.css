@@ -2503,6 +2503,18 @@ button[type="submit"]:hover,
     padding: var(--space-xl) 0;
   }
   
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-cta-group .btn,
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  
   /* Services Page Responsive */
   .service-body {
     grid-template-columns: 1fr;
