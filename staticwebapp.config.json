@@ -13,6 +13,10 @@
       "rewrite": "/services.html"
     },
     {
+      "route": "/products",
+      "rewrite": "/products.html"
+    },
+    {
       "route": "/industries",
       "rewrite": "/industries.html"
     },
