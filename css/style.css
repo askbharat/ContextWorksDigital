@@ -225,11 +225,24 @@ p {
   padding-bottom: var(--space-md);
 }
 
+/* Logo Styling */
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  letter-spacing: -0.01em;
+  display: block;
+  height: 42px;
+  width: auto;
+  transition: opacity var(--transition-base);
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.footer-logo {
+  display: block;
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
+  margin-bottom: var(--space-sm);
 }
 
 nav {
@@ -947,6 +960,14 @@ button[type="submit"]:hover,
   nav {
     width: 100%;
     justify-content: center;
+  }
+  
+  .logo {
+    height: 36px;
+  }
+  
+  .footer-logo {
+    height: 28px;
   }
 }
 
