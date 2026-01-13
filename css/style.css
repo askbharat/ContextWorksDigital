@@ -2906,3 +2906,424 @@ button[type="submit"]:hover,
   }
 }
 
+/* ============================================
+   CONTACT PAGE - CONSULTING-GRADE STYLING
+   ============================================ */
+
+/* Contact Hero */
+.contact-hero {
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+}
+
+.contact-hero h2 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.contact-hero__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Expectation Setting Section */
+.contact-intro-section {
+  padding: 60px 0;
+  background: #f9fafb;
+}
+
+.contact-expectation {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.expectation-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+}
+
+/* Contact Main Section - Two Column Layout */
+.contact-main-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.contact-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left Column - Contact Form */
+.contact-form-wrapper {
+  padding: 0;
+}
+
+.contact-section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.contact-section-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.contact-form-pro {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group-pro {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label-pro {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.form-input-pro,
+.form-textarea-pro {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.form-input-pro:focus,
+.form-textarea-pro:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+}
+
+.form-textarea-pro {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-checkbox-pro {
+  margin-top: 8px;
+}
+
+.checkbox-label-pro {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+}
+
+.checkbox-label-pro input[type="checkbox"] {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.btn-contact-primary {
+  background: #0078d4;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  margin-top: 12px;
+}
+
+.btn-contact-primary:hover {
+  background: #005a9e;
+  transform: translateY(-1px);
+}
+
+.form-response-note {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0 0 0;
+  font-style: italic;
+}
+
+/* Right Column - Contact Details */
+.contact-details-wrapper {
+  padding: 0;
+}
+
+.contact-details-card {
+  background: #f9fafb;
+  padding: 35px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.contact-info-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  stroke: white;
+}
+
+.contact-info-content {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+.contact-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+  display: block;
+  text-decoration: none;
+}
+
+a.contact-value:hover {
+  color: #0078d4;
+  text-decoration: underline;
+}
+
+.contact-role,
+.contact-note {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Trust Reassurance */
+.contact-reassurance {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.reassurance-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 16px 0;
+}
+
+.reassurance-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reassurance-list li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.reassurance-list li:last-child {
+  margin-bottom: 0;
+}
+
+.reassurance-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0078d4;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Bottom CTA Section */
+.contact-cta-section {
+  padding: 60px 0;
+  background: #f9fafb;
+}
+
+.contact-soft-cta {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.cta-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 28px;
+}
+
+.btn-secondary-contact {
+  display: inline-block;
+  background: white;
+  color: #0078d4;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: 2px solid #0078d4;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-contact:hover {
+  background: #0078d4;
+  color: white;
+}
+
+.cta-footnote {
+  font-size: 13px;
+  color: #888;
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - CONTACT PAGE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .contact-two-column {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 60px 0;
+  }
+  
+  .contact-hero h2 {
+    font-size: 32px;
+  }
+  
+  .contact-hero__subtitle {
+    font-size: 18px;
+  }
+  
+  .contact-intro-section {
+    padding: 50px 0;
+  }
+  
+  .expectation-text {
+    font-size: 16px;
+  }
+  
+  .contact-main-section {
+    padding: 60px 0;
+  }
+  
+  .contact-two-column {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .contact-section-title {
+    font-size: 24px;
+  }
+  
+  .contact-details-card {
+    padding: 28px;
+  }
+  
+  .contact-cta-section {
+    padding: 50px 0;
+  }
+  
+  .cta-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero h2 {
+    font-size: 28px;
+  }
+  
+  .contact-hero__subtitle {
+    font-size: 16px;
+  }
+  
+  .contact-icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .contact-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .form-input-pro,
+  .form-textarea-pro {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}

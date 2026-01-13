@@ -28,150 +28,128 @@
     </div>
   </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
+  <!-- Contact Hero -->
+  <section class="contact-hero">
     <div class="container">
-      <h2>Let's Talk</h2>
-      <p>Discuss whether AI automation makes sense for your organization</p>
+      <h2>Get in Touch</h2>
+      <p class="contact-hero__subtitle">
+        Start a conversation about responsible AI, automation, and Microsoft-aligned solutions.
+      </p>
     </div>
   </section>
 
-  <!-- Contact Content -->
-  <section class="section-white">
+  <!-- Expectation Setting -->
+  <section class="section section-white contact-intro-section">
     <div class="container">
-      <div class="contact-layout">
+      <div class="contact-expectation">
+        <p class="expectation-text">
+          We typically begin with a short discovery conversation to understand your context, constraints, and goals before proposing next steps. Our engagements are consulting-led, not transactional—focused on ensuring the right fit and approach before any commitment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Content (Two-Column Layout) -->
+  <section class="section contact-main-section">
+    <div class="container">
+      <div class="contact-two-column">
         
-        <!-- Left Column: Intro Text -->
-        <div class="contact-intro">
-          <h3>Schedule a Discovery Call</h3>
-          <p class="intro-text">
-            We understand that exploring AI and automation requires thoughtful consideration, especially in regulated industries. Our discovery calls are consultative conversations, not sales pitches.
-          </p>
+        <!-- Left Column: Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3 class="contact-section-title">Send a Message</h3>
+          <p class="contact-section-intro">Share your context and we'll reach out to schedule a conversation.</p>
           
-          <h4>What to Expect</h4>
-          <ul class="expect-list">
-            <li>30-minute conversation about your current challenges</li>
-            <li>Discussion of your Microsoft 365 environment and existing systems</li>
-            <li>Initial assessment of automation opportunities</li>
-            <li>Overview of our approach and engagement model</li>
-            <li>Honest feedback on whether AI makes sense for your situation</li>
-          </ul>
+          <form class="contact-form-pro" action="#" method="POST">
+            <div class="form-group-pro">
+              <label for="name" class="form-label-pro">Name *</label>
+              <input type="text" id="name" name="name" class="form-input-pro" required placeholder="Your full name">
+            </div>
 
-          <h4>We're a Good Fit If You</h4>
-          <ul class="fit-list">
-            <li>Use Microsoft 365 and want to leverage your existing investment</li>
-            <li>Operate in a regulated industry (healthcare, legal, accounting)</li>
-            <li>Value security, compliance, and responsible AI implementation</li>
-            <li>Want fixed-scope engagements with clear deliverables</li>
-            <li>Prefer working with senior consultants, not junior developers</li>
-          </ul>
+            <div class="form-group-pro">
+              <label for="email" class="form-label-pro">Work Email *</label>
+              <input type="email" id="email" name="email" class="form-input-pro" required placeholder="you@company.com">
+            </div>
 
-          <div class="contact-info-box">
-            <h4>Direct Contact</h4>
-            <p><strong>Email:</strong> <a href="mailto:maruthikiran@contextworksdigital.com">maruthikiran@contextworksdigital.com</a></p>
-            <p><strong>Founder & Principal Consultant</strong></p>
-            <p><strong>Availability:</strong> Monday–Friday, by appointment</p>
-            <p>Meetings scheduled across US, UK, and Australia time zones.</p>
-          </div>
+            <div class="form-group-pro">
+              <label for="organization" class="form-label-pro">Organization</label>
+              <input type="text" id="organization" name="organization" class="form-input-pro" placeholder="Your organization (optional)">
+            </div>
+
+            <div class="form-group-pro">
+              <label for="message" class="form-label-pro">Tell Us About Your Context *</label>
+              <textarea id="message" name="message" class="form-textarea-pro" rows="6" required placeholder="What challenges are you exploring? What Microsoft technologies are you currently using?"></textarea>
+            </div>
+
+            <div class="form-group-pro form-checkbox-pro">
+              <label class="checkbox-label-pro">
+                <input type="checkbox" name="consent" value="yes" required>
+                <span>I consent to being contacted about this inquiry</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-contact-primary">Send Message</button>
+
+            <p class="form-response-note">We typically respond within 1 business day.</p>
+          </form>
         </div>
 
-        <!-- Right Column: Contact Form -->
-        <div class="contact-form-section">
-          <div class="form-card">
-            <h3>Book a Discovery Call</h3>
-            <p class="form-intro">Fill out this form and we'll schedule a time that works for you.</p>
+        <!-- Right Column: Contact Details & Availability -->
+        <div class="contact-details-wrapper">
+          <div class="contact-details-card">
+            <h3 class="contact-section-title">Direct Contact</h3>
             
-            <form class="contact-form" action="#" method="POST">
-              <div class="form-group">
-                <label for="name">Your Name *</label>
-                <input type="text" id="name" name="name" required placeholder="John Smith">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
               </div>
-
-              <div class="form-group">
-                <label for="title">Job Title *</label>
-                <input type="text" id="title" name="title" required placeholder="CTO, IT Manager, Operations Director">
+              <div class="contact-info-content">
+                <p class="contact-label">Email</p>
+                <a href="mailto:maruthikiran@contextworksdigital.com" class="contact-value">maruthikiran@contextworksdigital.com</a>
+                <p class="contact-role">Founder & Principal Consultant</p>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="company">Organization *</label>
-                <input type="text" id="company" name="company" required placeholder="Your company name">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
               </div>
-
-              <div class="form-group">
-                <label for="email">Business Email *</label>
-                <input type="email" id="email" name="email" required placeholder="you@company.com">
+              <div class="contact-info-content">
+                <p class="contact-label">Availability</p>
+                <p class="contact-value">Monday–Friday, by appointment</p>
+                <p class="contact-note">Meetings scheduled to accommodate client time zones</p>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+            <div class="contact-info-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
               </div>
-
-              <div class="form-group">
-                <label for="industry">Industry *</label>
-                <select id="industry" name="industry" required>
-                  <option value="">Select your industry</option>
-                  <option value="healthcare">Healthcare & Clinical Practices</option>
-                  <option value="legal">Legal & Professional Services</option>
-                  <option value="accounting">Accounting & Consulting</option>
-                  <option value="other">Other</option>
-                </select>
+              <div class="contact-info-content">
+                <p class="contact-label">Regions Served</p>
+                <p class="contact-value">United States, United Kingdom, Australia</p>
               </div>
-
-              <div class="form-group">
-                <label for="employees">Company Size</label>
-                <select id="employees" name="employees">
-                  <option value="">Select size</option>
-                  <option value="20-50">20-50 employees</option>
-                  <option value="51-100">51-100 employees</option>
-                  <option value="101-250">101-250 employees</option>
-                  <option value="251-500">251-500 employees</option>
-                  <option value="500+">500+ employees</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="location">Location *</label>
-                <select id="location" name="location" required>
-                  <option value="">Select your location</option>
-                  <option value="usa">United States</option>
-                  <option value="uk">United Kingdom</option>
-                  <option value="australia">Australia</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Tell Us About Your Challenge *</label>
-                <textarea id="message" name="message" rows="5" required placeholder="What processes are consuming your team's time? What automation or AI opportunities are you exploring?"></textarea>
-              </div>
-
-              <div class="form-group checkbox-group">
-                <label>
-                  <input type="checkbox" name="microsoft365" value="yes">
-                  <span>We currently use Microsoft 365</span>
-                </label>
-              </div>
-
-              <div class="form-group checkbox-group">
-                <label>
-                  <input type="checkbox" name="privacy" value="accepted" required>
-                  <span>I agree to be contacted about this inquiry *</span>
-                </label>
-              </div>
-
-              <button type="submit" class="btn-primary-large">Request Discovery Call</button>
-
-              <p class="form-note">We typically respond within 1 business day to schedule your call.</p>
-            </form>
+            </div>
           </div>
 
-          <!-- Alternative CTA -->
-          <div class="calendar-cta">
-            <h4>Prefer to Schedule Directly?</h4>
-            <p>Use our calendar link to book a time that works for you.</p>
-            <a href="#" class="btn-secondary">View Available Times</a>
-            <p class="cta-note"><em>Calendar scheduling link would be integrated with Calendly or Microsoft Bookings</em></p>
+          <!-- Trust Reassurance -->
+          <div class="contact-reassurance">
+            <h4 class="reassurance-title">What to Expect</h4>
+            <ul class="reassurance-list">
+              <li>Founder-led consulting with direct access to senior expertise</li>
+              <li>Confidential conversations with enterprise communication standards</li>
+              <li>No obligation discussions—focused on fit and value</li>
+              <li>Clear engagement models with fixed-scope deliverables</li>
+            </ul>
           </div>
         </div>
 
@@ -179,26 +157,14 @@
     </div>
   </section>
 
-  <!-- Trust Signals -->
-  <section class="section-grey">
+  <!-- Bottom CTA (Soft) -->
+  <section class="section section-light contact-cta-section">
     <div class="container">
-      <div class="trust-signals-compact">
-        <div class="trust-signal">
-          <strong>No Obligation</strong>
-          <p>Discovery calls are consultative, not sales pitches</p>
-        </div>
-        <div class="trust-signal">
-          <strong>Senior-Led</strong>
-          <p>You speak directly with experienced consultants</p>
-        </div>
-        <div class="trust-signal">
-          <strong>Confidential</strong>
-          <p>All discussions are treated as confidential</p>
-        </div>
-        <div class="trust-signal">
-          <strong>Global Team</strong>
-          <p>Supporting USA, UK, and Australia clients</p>
-        </div>
+      <div class="contact-soft-cta">
+        <h3 class="cta-title">Prefer a Scheduled Conversation?</h3>
+        <p class="cta-description">If you'd like to book a specific time directly, you can use our scheduling link to find a time that works for both of us.</p>
+        <a href="#" class="btn-secondary-contact">Book a Discovery Call</a>
+        <p class="cta-footnote">Calendar integration via Microsoft Bookings</p>
       </div>
     </div>
   </section>
