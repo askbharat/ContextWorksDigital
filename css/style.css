@@ -247,7 +247,7 @@ p {
 
 .logo {
   display: block;
-  height: 56px;
+  height: 72px;
   width: auto;
   filter: none;
   transition: all var(--transition-base);
@@ -259,7 +259,7 @@ p {
 
 .footer-logo {
   display: block;
-  height: 40px;
+  height: 48px;
   width: auto;
   opacity: 1;
   filter: brightness(1.1);
