@@ -247,7 +247,7 @@ p {
 
 .logo {
   display: block;
-  height: 72px;
+  height: 90px;
   width: auto;
   filter: none;
   transition: all var(--transition-base);
