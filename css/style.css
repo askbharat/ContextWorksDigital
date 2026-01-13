@@ -323,6 +323,7 @@ nav a.active {
 .hero-text h1 {
   margin-bottom: var(--space-md);
   color: var(--color-text);
+  line-height: 1.2;
 }
 
 .hero-text p {
@@ -330,6 +331,21 @@ nav a.active {
   color: var(--color-text-secondary);
   margin-bottom: var(--space-lg);
   line-height: var(--line-height-relaxed);
+}
+
+.hero-value-prop {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .hero-image img {
