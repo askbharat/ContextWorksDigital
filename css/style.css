@@ -229,24 +229,35 @@ p {
 .logo-link {
   display: flex;
   align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  background: rgba(0, 120, 212, 0.03);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.logo-link:hover {
+  background: rgba(0, 120, 212, 0.06);
+  transform: translateY(-1px);
 }
 
 .logo {
   display: block;
-  height: 42px;
+  height: 56px;
   width: auto;
-  transition: opacity var(--transition-base);
+  filter: brightness(1) contrast(1.1);
+  transition: all var(--transition-base);
 }
 
 .logo:hover {
-  opacity: 0.85;
+  filter: brightness(1.05) contrast(1.15);
 }
 
 .footer-logo {
   display: block;
-  height: 32px;
+  height: 40px;
   width: auto;
-  opacity: 0.9;
+  opacity: 1;
+  filter: brightness(1.1);
   margin-bottom: var(--space-sm);
 }
 
@@ -1973,11 +1984,11 @@ button[type="submit"]:hover,
   }
   
   .logo {
-    height: 36px;
+    height: 48px;
   }
   
   .footer-logo {
-    height: 28px;
+    height: 36px;
   }
 }
 
