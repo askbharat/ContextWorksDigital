@@ -1,19 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" fill="none">
-  <!-- Stylized CW Logo Mark -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 460" fill="none">
+  <!-- CW Logo Mark -->
   <g id="logo-mark">
-    <!-- C in teal/cyan -->
-    <path d="M30 20 Q10 20 10 40 Q10 60 30 60 L35 60 Q45 60 45 50 L45 45 Q42 45 42 48 Q42 55 35 55 L30 55 Q20 55 20 40 Q20 25 30 25 L35 25 Q42 25 42 32 Q42 35 45 35 L45 30 Q45 20 35 20 Z" fill="#3EBEAA"/>
+    <!-- C shape in cyan/teal -->
+    <path d="M124 292 C124 207 164 167 234 167 C270 167 302 180 324 202 L302 232 C288 218 267 210 234 210 C188 210 167 234 167 292 C167 350 188 374 234 374 C267 374 288 366 302 352 L324 382 C302 404 270 417 234 417 C164 417 124 377 124 292 Z" fill="#00BCD4"/>
     
-    <!-- W in orange (overlapping and integrated) -->
-    <path d="M38 20 L45 20 L50 45 L55 20 L62 20 L67 45 L72 20 L78 20 L70 60 L63 60 L58 35 L53 60 L46 60 Z" fill="#F5A623"/>
+    <!-- W shape with gradient -->
+    <defs>
+      <linearGradient id="wGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5F6368;stop-opacity:1" />
+        <stop offset="40%" style="stop-color:#FF9800;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#FFC107;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <path d="M234 167 L270 167 L297 330 L324 167 L360 167 L387 330 L414 167 L450 167 L408 417 L372 417 L345 254 L318 417 L282 417 Z" fill="url(#wGrad)"/>
   </g>
   
-  <!-- Company Text -->
-  <g id="company-name">
-    <!-- ContextWorks in teal -->
-    <text x="95" y="47" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="400" fill="#3EBEAA" letter-spacing="-0.5">ContextWorks</text>
+  <!-- Text Group -->
+  <g id="text-content">
+    <!-- "Context" in cyan -->
+    <text x="414" y="307" font-family="'Segoe UI', Arial, sans-serif" font-size="105" font-weight="600" fill="#00BCD4">Context</text>
     
-    <!-- Digital Systems in gray -->
-    <text x="95" y="68" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="300" fill="#B3B3B3" letter-spacing="0.5">Digital Systems</text>
+    <!-- "Works" in blue -->
+    <text x="740" y="307" font-family="'Segoe UI', Arial, sans-serif" font-size="105" font-weight="600" fill="#0D47A1">Works</text>
+    
+    <!-- Separator line -->
+    <line x1="414" y1="330" x2="1020" y2="330" stroke="#5F6368" stroke-width="2"/>
+    
+    <!-- "DIGITAL SYSTEMS PVT LTD" in gray -->
+    <text x="414" y="375" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="500" fill="#5F6368" letter-spacing="8">DIGITAL SYSTEMS PVT LTD</text>
   </g>
 </svg>
