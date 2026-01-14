@@ -1,0 +1,15 @@
+{
+  "name": "contextworks-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for ContextWorks Digital",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "@azure/communication-email": "^1.0.0"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^4.0.5"
+  }
+}

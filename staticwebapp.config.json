@@ -1,9 +1,13 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
-    "exclude": ["/css/*", "/images/*", "/js/*", "*.{css,js,jpg,png,gif,ico,svg,woff,woff2,ttf,eot}"]
+    "exclude": ["/css/*", "/images/*", "/js/*", "/api/*", "*.{css,js,jpg,png,gif,ico,svg,woff,woff2,ttf,eot}"]
   },
   "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"]
+    },
     {
       "route": "/",
       "rewrite": "/index.html"
@@ -40,7 +44,7 @@
     }
   },
   "globalHeaders": {
-    "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;",
+    "content-security-policy": "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://*.azurestaticapps.net;",
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
     "Referrer-Policy": "strict-origin-when-cross-origin"

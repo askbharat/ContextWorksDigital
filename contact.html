@@ -59,12 +59,7 @@
           <h3 class="contact-section-title">Send a Message</h3>
           <p class="contact-section-intro">Share your context and we'll reach out to schedule a conversation.</p>
           
-          <form class="contact-form-pro" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="hidden" name="subject" value="New Contact Form Submission - ContextWorks Digital">
-            <input type="hidden" name="redirect" value="https://white-meadow-00535f600.1.azurestaticapps.net/contact.html?success=true">
-            <input type="hidden" name="from_name" value="ContextWorks Digital Contact Form">
-            
+          <form class="contact-form-pro" id="contactForm">
             <div class="form-group-pro">
               <label for="name" class="form-label-pro">Name *</label>
               <input type="text" id="name" name="name" class="form-input-pro" required placeholder="Your full name">
@@ -92,7 +87,9 @@
               </label>
             </div>
 
-            <button type="submit" class="btn-contact-primary">Send Message</button>
+            <button type="submit" class="btn-contact-primary" id="submitBtn">Send Message</button>
+
+            <div id="formMessage" style="display: none; margin-top: 16px; padding: 12px; border-radius: 6px;"></div>
 
             <p class="form-response-note">We typically respond within 1 business day.</p>
           </form>
@@ -211,11 +208,68 @@
       </div>
     </div>
   </footer>
-        <p>© 2026 ContextWorks Digital. All rights reserved.</p>
-        <p class="disclaimer">AI solutions are designed with human oversight and compliance considerations.</p>
-      </div>
-    </div>
-  </footer>
 
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
+      const form = e.target;
+      
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      
+      // Get form data
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        organization: form.organization.value,
+        message: form.message.value,
+        consent: form.consent.checked ? 'yes' : 'no'
+      };
+      
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        // Show message
+        formMessage.style.display = 'block';
+        
+        if (response.ok) {
+          formMessage.style.backgroundColor = '#d4edda';
+          formMessage.style.color = '#155724';
+          formMessage.style.border = '1px solid #c3e6cb';
+          formMessage.textContent = result.message;
+          
+          // Reset form
+          form.reset();
+        } else {
+          formMessage.style.backgroundColor = '#f8d7da';
+          formMessage.style.color = '#721c24';
+          formMessage.style.border = '1px solid #f5c6cb';
+          formMessage.textContent = result.message;
+        }
+      } catch (error) {
+        formMessage.style.display = 'block';
+        formMessage.style.backgroundColor = '#f8d7da';
+        formMessage.style.color = '#721c24';
+        formMessage.style.border = '1px solid #f5c6cb';
+        formMessage.textContent = 'An error occurred. Please try again or email us directly at maruthikiran@contextworksdigital.com';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
 </body>
 </html>
