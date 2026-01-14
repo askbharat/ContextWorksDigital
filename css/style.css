@@ -156,6 +156,24 @@ a {
   color: rgba(255, 255, 255, 0.9);
 }
 
+.section-dark .btn-primary {
+  display: inline-block;
+  padding: 16px 32px;
+  background: transparent;
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.section-dark .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
 /* =========================
    TYPOGRAPHY
 ========================= */
