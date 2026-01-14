@@ -239,11 +239,33 @@ p {
   background: #ffffff;
   border-radius: 6px;
   transition: all var(--transition-base);
+  text-decoration: none;
 }
 
 .logo-link:hover {
   background: #ffffff;
   transform: translateY(-1px);
+}
+
+.header-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.header-brand {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+.header-tagline {
+  font-size: 8px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .logo {
