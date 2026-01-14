@@ -1533,12 +1533,14 @@ button[type="submit"]:hover,
 .industries-cta h3 {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--space-md);
+  color: #ffffff;
 }
 
 .industries-cta p {
   font-size: var(--font-size-lg);
   max-width: 700px;
   margin: 0 auto var(--space-xl);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .cta-buttons {
