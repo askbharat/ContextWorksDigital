@@ -2684,6 +2684,12 @@ button[type="submit"]:hover,
   .header .container {
     flex-direction: column;
     gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-sm);
+  }
+  
+  .header {
+    max-height: none;
   }
   
   nav {
