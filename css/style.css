@@ -220,6 +220,7 @@ p {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
+  max-height: 120px;
 }
 
 .header .container {
