@@ -148,6 +148,14 @@ a {
   color: #ffffff;
 }
 
+.section-dark h3 {
+  color: #ffffff;
+}
+
+.section-dark p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* =========================
    TYPOGRAPHY
 ========================= */
