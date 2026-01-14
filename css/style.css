@@ -144,7 +144,7 @@ a {
 }
 
 .section-dark {
-  background: var(--color-bg-dark);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: #ffffff;
 }
 
