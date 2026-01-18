@@ -345,6 +345,23 @@ nav a.active {
   align-items: center;
 }
 
+/* Hero Image Styling */
+.hero-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  margin: 2.5rem auto 0;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-slow);
+}
+
+.hero-image:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
