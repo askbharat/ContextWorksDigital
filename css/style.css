@@ -362,6 +362,36 @@ nav a.active {
   transform: translateY(-2px);
 }
 
+/* Service Visual Styling */
+.service-visual {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.service-visual img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  display: block;
+}
+
+.service-visual img:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.service-visual figcaption {
+  margin-top: 1rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: var(--line-height-normal);
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
