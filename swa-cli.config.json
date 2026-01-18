@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "contextworks": {
+      "appLocation": ".",
+      "apiLocation": "api",
+      "outputLocation": ".",
+      "appDevserverUrl": "http://localhost:8080",
+      "apiDevserverUrl": "http://localhost:7071"
+    }
+  }
+}
