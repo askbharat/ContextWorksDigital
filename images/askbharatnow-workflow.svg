@@ -1,0 +1,41 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" rx="36" fill="#F7FBFF"/>
+  <rect x="72" y="72" width="1056" height="616" rx="28" fill="white" stroke="#DCECFB" stroke-width="2"/>
+  <rect x="116" y="126" width="968" height="88" rx="20" fill="#F1F8FF"/>
+  <text x="168" y="178" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#0F3D66">AskBharatNow Clinical Workflow</text>
+  <rect x="138" y="270" width="168" height="146" rx="20" fill="#FFFFFF" stroke="#BFDFF7" stroke-width="2"/>
+  <path d="M190 332H236" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M190 360H260" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M190 304H244" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M174 292L197 314L246 266" stroke="#107C10" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="162" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">Medical Reports</text>
+  <rect x="384" y="270" width="168" height="146" rx="20" fill="#FFFFFF" stroke="#BFDFF7" stroke-width="2"/>
+  <path d="M432 312H500" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M432 340H486" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M432 368H478" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M445 282L468 306L517 258" stroke="#0078D4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="406" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">AI Structuring</text>
+  <rect x="630" y="270" width="168" height="146" rx="20" fill="#FFFFFF" stroke="#BFDFF7" stroke-width="2"/>
+  <path d="M676 320C697 320 717 300 717 278C717 256 697 236 676 236C655 236 635 256 635 278C635 300 655 320 676 320Z" stroke="#0078D4" stroke-width="4"/>
+  <path d="M676 292L694 308L724 276" stroke="#107C10" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M662 352H690" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <text x="648" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">Clinician Review</text>
+  <rect x="876" y="270" width="168" height="146" rx="20" fill="#FFFFFF" stroke="#BFDFF7" stroke-width="2"/>
+  <path d="M930 282H1002" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M930 310H982" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M930 338H996" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M926 368H1008" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <text x="920" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">Patient Guidance</text>
+  <rect x="500" y="498" width="200" height="110" rx="20" fill="#FFFFFF" stroke="#BFDFF7" stroke-width="2"/>
+  <path d="M556 530H604" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M556 558H626" stroke="#0078D4" stroke-width="4" stroke-linecap="round"/>
+  <path d="M534 506L556 528L608 474" stroke="#107C10" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="530" y="612" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="600" fill="#1A1A1A">Patient Vault</text>
+  <path d="M306 342H384" stroke="#5C7C8C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M552 342H630" stroke="#5C7C8C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M798 342H876" stroke="#5C7C8C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M700 416V498" stroke="#5C7C8C" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="700" cy="342" r="10" fill="#0078D4"/>
+  <circle cx="700" cy="498" r="10" fill="#0078D4"/>
+  <text x="234" y="706" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" fill="#2E5D7A">Structured records • clinician review • continuity of care</text>
+</svg>
