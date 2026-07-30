@@ -2359,11 +2359,11 @@ button[type="submit"]:hover,
 }
 
 .abn-node {
-  min-height: 128px;
+  min-height: 156px;
   border: 1px solid #d7e6f5;
   background: #f8fcff;
   border-radius: 14px;
-  padding: 0.7rem;
+  padding: 0.8rem 0.65rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -2383,9 +2383,15 @@ button[type="submit"]:hover,
 
 .abn-node h3 {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.3;
   color: #17355b;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.abn-node[data-node="2"] h3 {
+  font-size: 13px;
 }
 
 .abn-hero-note {
@@ -2401,7 +2407,7 @@ button[type="submit"]:hover,
 }
 
 .abn-workflow-mobile .abn-node {
-  min-height: 92px;
+  min-height: 108px;
 }
 
 .abn-workflow-mobile .abn-node h3 {
