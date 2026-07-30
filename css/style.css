@@ -2386,12 +2386,14 @@ button[type="submit"]:hover,
   font-size: 14px;
   line-height: 1.3;
   color: #17355b;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .abn-node[data-node="2"] h3 {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.25;
 }
 
 .abn-hero-note {
