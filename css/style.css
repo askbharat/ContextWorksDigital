@@ -2842,6 +2842,91 @@ button[type="submit"]:hover,
   font-style: normal;
 }
 
+.abn-final-cta {
+  height: auto;
+  min-height: unset;
+  padding: 72px 24px;
+  overflow: visible;
+  scroll-margin-top: 120px;
+}
+
+.abn-final-cta .cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.abn-final-cta .founder-card {
+  position: relative;
+  margin: 48px auto 0;
+  width: min(100%, 620px);
+  height: auto;
+  padding: 48px 36px;
+  box-sizing: border-box;
+  z-index: 1;
+  display: block;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+.abn-final-cta .cta-buttons .btn-primary {
+  background: #ffffff;
+  color: var(--color-primary-dark);
+  border: 2px solid #ffffff;
+}
+
+.abn-final-cta .cta-buttons .btn-primary:hover,
+.abn-final-cta .cta-buttons .btn-primary:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.abn-final-cta .cta-buttons .btn-secondary {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  background: rgba(0, 74, 127, 0.45);
+}
+
+.abn-final-cta .cta-buttons .btn-secondary:hover,
+.abn-final-cta .cta-buttons .btn-secondary:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.abn-final-cta .cta-buttons .btn-primary:focus-visible,
+.abn-final-cta .cta-buttons .btn-secondary:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 2px;
+}
+
+.abn-final-cta .abn-founder-card {
+  background: #ffffff;
+  color: #172033;
+}
+
+.abn-final-cta .abn-founder-card h3,
+.abn-final-cta .abn-founder-card strong {
+  color: #172033;
+}
+
+.abn-final-cta .abn-founder-card p {
+  color: #475569;
+}
+
+.abn-final-cta .abn-founder-card a {
+  color: var(--color-primary);
+}
+
 .has-js .js-reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -2965,6 +3050,19 @@ button[type="submit"]:hover,
   .abn-arrow {
     transform: rotate(90deg);
     justify-self: center;
+  }
+
+  .abn-final-cta .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .abn-final-cta .founder-card {
+    margin-top: 32px;
+    padding: 32px 20px;
   }
 }
 
