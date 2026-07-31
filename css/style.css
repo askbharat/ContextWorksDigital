@@ -2787,6 +2787,23 @@ button[type="submit"]:hover,
   font-weight: 400;
 }
 
+.site-footer__legal-links {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer__legal-links a {
+  color: rgba(255, 255, 255, 0.86);
+  text-decoration: none;
+}
+
+.site-footer__legal-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .site-footer__trademark {
   font-size: 12px;
   line-height: 1.5;
