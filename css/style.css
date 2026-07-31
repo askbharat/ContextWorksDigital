@@ -914,8 +914,9 @@ nav a.active {
   line-height: 1.25;
   color: #0b2e4f;
   font-weight: 800;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 .hero-workflow-step p {
@@ -924,7 +925,12 @@ nav a.active {
   font-size: 13.5px;
   line-height: 1.45;
   color: #123a5c;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+}
+
+.hero-workflow-step.step-ai h3 {
+  white-space: nowrap;
+  font-size: 15px;
 }
 
 .step-intake {
