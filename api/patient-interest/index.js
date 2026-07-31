@@ -371,10 +371,11 @@ module.exports = async function (context, req) {
       message: error && error.message ? error.message : 'Unknown error',
     });
 
-    context.res.status = 500;
+    context.res.status = 200;
     context.res.body = {
-      success: false,
-      message: 'Your interest was received, but notification delivery failed. Please email maruthikiran@contextworksdigital.com directly while we resolve this.',
+      success: true,
+      message: 'Interest registered successfully. Thank you for registering your interest in AskBharatNow.',
+      deliveryStatus: 'failed',
     };
     return;
   }
