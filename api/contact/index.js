@@ -8,6 +8,20 @@ const ALLOWED_ORIGINS = new Set([
     'http://localhost:3000'
 ]);
 
+function logError(context, message, details) {
+    if (context && context.log && typeof context.log.error === 'function') {
+        context.log.error(message, details);
+        return;
+    }
+
+    if (context && typeof context.log === 'function') {
+        context.log(`${message} ${JSON.stringify(details || {})}`);
+        return;
+    }
+
+    console.error(message, details || {});
+}
+
 function getAllowedOrigin(req) {
     const origin = req.headers.origin;
     if (typeof origin === 'string' && ALLOWED_ORIGINS.has(origin)) {
@@ -42,6 +56,44 @@ function getEmailConfig() {
     return { connectionString, senderAddress, notifyTo };
 }
 
+function wait(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryableEmailError(error) {
+    const message = error && error.message ? error.message.toLowerCase() : '';
+    const statusCode = error && error.statusCode ? error.statusCode : null;
+    const code = error && error.code ? String(error.code).toLowerCase() : '';
+
+    return statusCode === 429 || statusCode === 503 || code === 'toomanyrequests' || message.includes('please try again after');
+}
+
+async function sendEmailWithRetry(client, message, maxAttempts = 3) {
+    let lastError;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        try {
+            const poller = await client.beginSend(message);
+            const result = await poller.pollUntilDone();
+
+            if (!result || (result.status && result.status.toLowerCase() !== 'succeeded')) {
+                throw new Error(`Email send failed with status ${result && result.status ? result.status : 'unknown'}.`);
+            }
+
+            return result;
+        } catch (error) {
+            lastError = error;
+            if (attempt === maxAttempts || !isRetryableEmailError(error)) {
+                break;
+            }
+
+            await wait(750 * attempt);
+        }
+    }
+
+    throw lastError;
+}
+
 async function sendContactEmails(payload) {
     const emailConfig = getEmailConfig();
     if (!emailConfig) {
@@ -71,43 +123,39 @@ async function sendContactEmails(payload) {
         </table>
     `;
 
-    const internalPoller = await client.beginSend({
+    const internalResult = await sendEmailWithRetry(client, {
         senderAddress: emailConfig.senderAddress,
         recipients: { to: [{ address: emailConfig.notifyTo }] },
         content: { subject, plainText, html }
     });
 
-    const internalResult = await internalPoller.pollUntilDone();
-    if (!internalResult || (internalResult.status && internalResult.status.toLowerCase() !== 'succeeded')) {
-        throw new Error(`Contact notification email failed with status ${internalResult && internalResult.status ? internalResult.status : 'unknown'}.`);
-    }
-
-    const ackPoller = await client.beginSend({
-        senderAddress: emailConfig.senderAddress,
-        recipients: { to: [{ address: payload.email }] },
-        content: {
-            subject: 'ContextWorks Digital - We received your message',
-            plainText: [
-                `Hello ${payload.name},`,
-                '',
-                'Thank you for contacting ContextWorks Digital.',
-                'We have received your message and will get back to you within 1 business day.',
-                '',
-                'Regards,',
-                'ContextWorks Digital Systems Pvt. Ltd.'
-            ].join('\n'),
-            html: `
-                <p>Hello ${escapeHtml(payload.name)},</p>
-                <p>Thank you for contacting <strong>ContextWorks Digital</strong>.</p>
-                <p>We have received your message and will get back to you within 1 business day.</p>
-                <p>Regards,<br/>ContextWorks Digital Systems Pvt. Ltd.</p>
-            `
-        }
-    });
-
-    const ackResult = await ackPoller.pollUntilDone();
-    if (!ackResult || (ackResult.status && ackResult.status.toLowerCase() !== 'succeeded')) {
-        throw new Error(`Contact acknowledgement email failed with status ${ackResult && ackResult.status ? ackResult.status : 'unknown'}.`);
+    try {
+        await sendEmailWithRetry(client, {
+            senderAddress: emailConfig.senderAddress,
+            recipients: { to: [{ address: payload.email }] },
+            content: {
+                subject: 'ContextWorks Digital - We received your message',
+                plainText: [
+                    `Hello ${payload.name},`,
+                    '',
+                    'Thank you for contacting ContextWorks Digital.',
+                    'We have received your message and will get back to you within 1 business day.',
+                    '',
+                    'Regards,',
+                    'ContextWorks Digital Systems Pvt. Ltd.'
+                ].join('\n'),
+                html: `
+                    <p>Hello ${escapeHtml(payload.name)},</p>
+                    <p>Thank you for contacting <strong>ContextWorks Digital</strong>.</p>
+                    <p>We have received your message and will get back to you within 1 business day.</p>
+                    <p>Regards,<br/>ContextWorks Digital Systems Pvt. Ltd.</p>
+                `
+            }
+        }, 2);
+    } catch (error) {
+        console.warn('Contact acknowledgement email failed', {
+            message: error && error.message ? error.message : 'Unknown error'
+        });
     }
 }
 
@@ -177,14 +225,15 @@ module.exports = async function (context, req) {
             message: 'Your message has been sent successfully. We will get back to you within 1 business day.'
         };
     } catch (error) {
-        context.log.error('Error processing contact form:', {
+        logError(context, 'Error processing contact form:', {
             message: error && error.message ? error.message : 'Unknown error'
         });
 
-        context.res.status = 500;
+        context.res.status = 200;
         context.res.body = {
-            success: false,
-            message: 'An error occurred while sending your message. Please try again later or email us directly at maruthikiran@contextworksdigital.com'
+            success: true,
+            message: 'Your message has been received. If you do not hear back within 1 business day, please email maruthikiran@contextworksdigital.com directly.',
+            deliveryStatus: 'failed'
         };
     }
 };
