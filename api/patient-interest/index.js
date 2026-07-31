@@ -1,5 +1,4 @@
 const recentRequests = new Map();
-const { EmailClient } = require('@azure/communication-email');
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -41,6 +40,31 @@ const ALLOWED_ORIGINS = new Set([
   'http://localhost:3000',
 ]);
 
+function logError(context, message, details) {
+  if (context && context.log && typeof context.log.error === 'function') {
+    context.log.error(message, details);
+    return;
+  }
+
+  if (context && typeof context.log === 'function') {
+    context.log(`${message} ${JSON.stringify(details || {})}`);
+    return;
+  }
+
+  console.error(message, details || {});
+}
+
+function createEmailClient(connectionString) {
+  let EmailClientCtor;
+  try {
+    ({ EmailClient: EmailClientCtor } = require('@azure/communication-email'));
+  } catch (_error) {
+    throw new Error('Email SDK is unavailable in the current runtime.');
+  }
+
+  return new EmailClientCtor(connectionString);
+}
+
 function getEmailConfig() {
   const connectionString = process.env.COMMUNICATION_SERVICES_CONNECTION_STRING;
   const senderAddress = process.env.SENDER_EMAIL_ADDRESS;
@@ -72,7 +96,7 @@ async function sendNotificationEmail(context, payload) {
     throw new Error('Email configuration is missing. Set COMMUNICATION_SERVICES_CONNECTION_STRING, SENDER_EMAIL_ADDRESS, and PATIENT_INTEREST_NOTIFY_TO.');
   }
 
-  const client = new EmailClient(emailConfig.connectionString);
+  const client = createEmailClient(emailConfig.connectionString);
 
   const servicesText = payload.services.join(', ');
   const subject = `New Patient Interest Registration - ${payload.fullName}`;
@@ -367,7 +391,7 @@ module.exports = async function (context, req) {
       consent,
     });
   } catch (error) {
-    context.log.error('Patient interest email send failed', {
+    logError(context, 'Patient interest email send failed', {
       message: error && error.message ? error.message : 'Unknown error',
     });
 

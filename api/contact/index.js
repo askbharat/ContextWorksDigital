@@ -1,5 +1,3 @@
-const { EmailClient } = require('@azure/communication-email');
-
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_ORIGINS = new Set([
     'https://www.contextworksdigital.com',
@@ -56,6 +54,17 @@ function getEmailConfig() {
     return { connectionString, senderAddress, notifyTo };
 }
 
+function createEmailClient(connectionString) {
+    let EmailClientCtor;
+    try {
+        ({ EmailClient: EmailClientCtor } = require('@azure/communication-email'));
+    } catch (_error) {
+        throw new Error('Email SDK is unavailable in the current runtime.');
+    }
+
+    return new EmailClientCtor(connectionString);
+}
+
 function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -100,7 +109,7 @@ async function sendContactEmails(payload) {
         throw new Error('Email configuration is missing.');
     }
 
-    const client = new EmailClient(emailConfig.connectionString);
+    const client = createEmailClient(emailConfig.connectionString);
     const subject = `New Contact Form Submission - ${payload.name}`;
     const plainText = [
         'A new contact form submission was received from contextworksdigital.com.',
