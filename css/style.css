@@ -5815,9 +5815,16 @@ html {
   }
 
   .hero-workflow-steps .workflow-arrow {
+    grid-column: auto !important;
+    grid-row: auto !important;
     align-self: center;
     margin: 2px 0 6px;
-    transform: rotate(90deg);
+    transform: rotate(90deg) !important;
+  }
+
+  .hero-workflow-steps .workflow-arrow svg {
+    width: 24px;
+    height: 40px;
   }
 
   .hero-workflow-step {
