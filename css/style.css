@@ -380,8 +380,8 @@ nav a.active {
 .abn-page .brand-logo img {
   display: block;
   width: auto;
-  max-width: 260px;
-  max-height: 44px;
+  max-width: 290px;
+  max-height: 50px;
   object-fit: contain;
 }
 
@@ -636,8 +636,8 @@ nav a.active {
   }
 
   .abn-page .brand-logo img {
-    max-width: 170px;
-    max-height: 34px;
+    max-width: 188px;
+    max-height: 38px;
   }
 }
 
@@ -661,18 +661,10 @@ nav a.active {
 /* Hero Image Styling */
 .hero-image {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   height: auto;
-  margin: 2.5rem auto 0;
+  margin: 1.2rem auto 0;
   display: block;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  transition: all var(--transition-slow);
-}
-
-.hero-image:hover {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
 }
 
 /* Service Visual Styling */
@@ -754,6 +746,203 @@ nav a.active {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+}
+
+.hero-workflow {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d7e3f1;
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(17, 47, 82, 0.1);
+  padding: 20px;
+}
+
+.hero-workflow-steps {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr) 56px minmax(0, 1fr) 56px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 8px;
+}
+
+.hero-workflow-step {
+  border: 1px solid #d8e4f1;
+  border-radius: 14px;
+  padding: 14px 12px;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 10px;
+  align-content: start;
+  min-height: 180px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.step-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.step-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.hero-workflow-step h3 {
+  grid-column: 1 / -1;
+  margin: 4px 0 6px;
+  font-size: 20px;
+  line-height: 1.25;
+  color: #0b2e4f;
+  font-weight: 800;
+}
+
+.hero-workflow-step p {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: #123a5c;
+}
+
+.step-intake {
+  border-top: 4px solid #1fa6a0;
+}
+
+.step-intake .step-number,
+.step-intake .step-icon {
+  background: rgba(31, 166, 160, 0.14);
+  color: #167f7a;
+}
+
+.step-intake .step-number {
+  background: #1fa6a0;
+  color: #ffffff;
+}
+
+.step-ai {
+  border-top: 4px solid #e36b2c;
+}
+
+.step-ai .step-number,
+.step-ai .step-icon {
+  background: rgba(227, 107, 44, 0.14);
+  color: #b44f1d;
+}
+
+.step-ai .step-number {
+  background: #e36b2c;
+  color: #ffffff;
+}
+
+.step-review {
+  border-top: 4px solid #0b4f8a;
+}
+
+.step-review .step-number,
+.step-review .step-icon {
+  background: rgba(11, 79, 138, 0.14);
+  color: #0b4f8a;
+}
+
+.step-review .step-number {
+  background: #0b4f8a;
+  color: #ffffff;
+}
+
+.step-guidance {
+  border-top: 4px solid #0f6b6e;
+}
+
+.step-guidance .step-number,
+.step-guidance .step-icon {
+  background: rgba(15, 107, 110, 0.14);
+  color: #0f6b6e;
+}
+
+.step-guidance .step-number {
+  background: #0f6b6e;
+  color: #ffffff;
+}
+
+.workflow-arrow {
+  align-self: center;
+  justify-self: center;
+  color: #16486f;
+}
+
+.workflow-arrow svg {
+  width: 52px;
+  height: 22px;
+  display: block;
+}
+
+.workflow-downlink {
+  display: flex;
+  justify-content: center;
+  color: #16486f;
+  margin: 10px 0;
+}
+
+.workflow-downlink svg {
+  width: 26px;
+  height: 42px;
+  display: block;
+}
+
+.patient-vault-panel {
+  width: 100%;
+  background: linear-gradient(135deg, #edf7fa 0%, #f5fbfd 100%);
+  border: 1px solid #bfdde6;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.patient-vault-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #d7eef4;
+  color: #0f6b6e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.patient-vault-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.patient-vault-panel h3 {
+  margin: 0 0 2px;
+  font-size: 20px;
+  color: #0b2e4f;
+}
+
+.patient-vault-panel p {
+  margin: 0;
+  font-size: 15.5px;
+  color: #123a5c;
 }
 
 /* =========================
@@ -5247,6 +5436,19 @@ html {
   
   .hero-image {
     order: -1;
+  }
+
+  .hero-workflow-steps {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .workflow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .hero-workflow-step {
+    min-height: 0;
   }
   
   .contact-layout {
