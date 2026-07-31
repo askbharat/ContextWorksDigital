@@ -33,7 +33,7 @@
     <div class="container">
       <h2>Get in Touch</h2>
       <p class="contact-hero__subtitle">
-        Start a conversation about responsible AI, automation, and Microsoft-aligned solutions.
+        Start a conversation about Microsoft AI and automation consulting, AskBharatNow clinic pilots, digital-health collaborations or strategic partnerships.
       </p>
     </div>
   </section>
@@ -43,7 +43,7 @@
     <div class="container">
       <div class="contact-expectation">
         <p class="expectation-text">
-          We typically begin with a short discovery conversation to understand your context, constraints, and goals before proposing next steps. Our engagements are consulting-led, not transactional—focused on ensuring the right fit and approach before any commitment.
+          We typically begin with a short discovery conversation to understand your context, constraints, and goals before proposing next steps. Our engagements are consulting-led, not transactional and focused on ensuring the right fit and approach before any commitment.
         </p>
       </div>
     </div>
@@ -76,8 +76,23 @@
             </div>
 
             <div class="form-group-pro">
+              <label for="inquiryType" class="form-label-pro">Inquiry Type *</label>
+              <select id="inquiryType" name="inquiryType" class="form-input-pro" required>
+                <option value="" selected disabled>Select an inquiry type</option>
+                <option value="AI and automation consulting">AI and automation consulting</option>
+                <option value="Azure or Power Platform architecture">Azure or Power Platform architecture</option>
+                <option value="AskBharatNow clinic or diagnostic pilot">AskBharatNow clinic or diagnostic pilot</option>
+                <option value="Healthcare partnership">Healthcare partnership</option>
+                <option value="Product or ecosystem collaboration">Product or ecosystem collaboration</option>
+                <option value="General enquiry">General enquiry</option>
+              </select>
+              <p class="form-helper-note">Patient early-access enquiries should use the AskBharatNow product-page registration form, which is the dedicated pathway for medical and early-access interest.</p>
+            </div>
+
+            <div class="form-group-pro">
               <label for="message" class="form-label-pro">Tell Us About Your Context *</label>
               <textarea id="message" name="message" class="form-textarea-pro" rows="6" required placeholder="What challenges are you exploring? What Microsoft technologies are you currently using?"></textarea>
+              <p class="form-warning-note">Please do not submit medical reports, symptoms, prescriptions, diagnoses or other sensitive health information through this form.</p>
             </div>
 
             <div class="form-group-pro form-checkbox-pro">
@@ -91,7 +106,7 @@
 
             <div id="formMessage" style="display: none; margin-top: 16px; padding: 12px; border-radius: 6px;"></div>
 
-            <p class="form-response-note">We typically respond within 1 business day.</p>
+            <p class="form-response-note">We usually respond within 1–2 business days.</p>
           </form>
         </div>
 
@@ -110,7 +125,10 @@
               <div class="contact-info-content">
                 <p class="contact-label">Email</p>
                 <a href="mailto:maruthikiran@contextworksdigital.com" class="contact-value">maruthikiran@contextworksdigital.com</a>
-                <p class="contact-role">Founder & Principal Consultant</p>
+                <p class="contact-role">Maruthi Kiran Jonnala Kambagiri</p>
+                <p class="contact-note">Founder &amp; Director</p>
+                <p class="contact-note">ContextWorks Digital Systems Pvt. Ltd.</p>
+                <p class="contact-note">AI, Azure and Power Platform Solutions Architect</p>
               </div>
             </div>
 
@@ -138,7 +156,8 @@
               </div>
               <div class="contact-info-content">
                 <p class="contact-label">Regions Served</p>
-                <p class="contact-value">United States, United Kingdom, Australia</p>
+                <p class="contact-value">Based in Bengaluru, India</p>
+                <p class="contact-note">Available for remote consulting engagements across India and selected international markets.</p>
               </div>
             </div>
           </div>
@@ -149,7 +168,7 @@
             <ul class="reassurance-list">
               <li>Founder-led consulting with direct access to senior expertise</li>
               <li>Confidential conversations with enterprise communication standards</li>
-              <li>No obligation discussions—focused on fit and value</li>
+              <li>No-obligation initial discussions focused on fit and value</li>
               <li>Clear engagement models with fixed-scope deliverables</li>
             </ul>
           </div>
@@ -181,7 +200,7 @@
             <div class="footer-tagline">DIGITAL SYSTEMS PVT LTD</div>
           </div>
           <p class="site-footer__description">Microsoft-focused AI, automation and cloud consulting</p>
-          <p class="site-footer__description">Available for remote consulting engagements in India and international markets.</p>
+          <p class="site-footer__description">Based in Bengaluru, India, supporting organisations in India and selected international markets.</p>
         </div>
         <div class="site-footer__col">
           <h4 class="site-footer__heading">Services</h4>
@@ -227,6 +246,7 @@
         name: form.name.value,
         email: form.email.value,
         organization: form.organization.value,
+        inquiryType: form.inquiryType.value,
         message: form.message.value,
         consent: form.consent.checked ? 'yes' : 'no'
       };

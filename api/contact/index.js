@@ -117,6 +117,7 @@ async function sendContactEmails(payload) {
         `Name: ${payload.name}`,
         `Email: ${payload.email}`,
         `Organization: ${payload.organization || 'Not provided'}`,
+        `Inquiry Type: ${payload.inquiryType || 'Not provided'}`,
         `Message: ${payload.message}`,
         `Timestamp (UTC): ${new Date().toISOString()}`
     ].join('\n');
@@ -127,6 +128,7 @@ async function sendContactEmails(payload) {
             <tr><td><strong>Name</strong></td><td>${escapeHtml(payload.name)}</td></tr>
             <tr><td><strong>Email</strong></td><td>${escapeHtml(payload.email)}</td></tr>
             <tr><td><strong>Organization</strong></td><td>${escapeHtml(payload.organization || 'Not provided')}</td></tr>
+            <tr><td><strong>Inquiry Type</strong></td><td>${escapeHtml(payload.inquiryType || 'Not provided')}</td></tr>
             <tr><td><strong>Message</strong></td><td>${escapeHtml(payload.message)}</td></tr>
             <tr><td><strong>Timestamp (UTC)</strong></td><td>${escapeHtml(new Date().toISOString())}</td></tr>
         </table>
@@ -148,7 +150,7 @@ async function sendContactEmails(payload) {
                     `Hello ${payload.name},`,
                     '',
                     'Thank you for contacting ContextWorks Digital.',
-                    'We have received your message and will get back to you within 1 business day.',
+                    'We have received your message and will usually get back to you within 1-2 business days.',
                     '',
                     'Regards,',
                     'ContextWorks Digital Systems Pvt. Ltd.'
@@ -156,7 +158,7 @@ async function sendContactEmails(payload) {
                 html: `
                     <p>Hello ${escapeHtml(payload.name)},</p>
                     <p>Thank you for contacting <strong>ContextWorks Digital</strong>.</p>
-                    <p>We have received your message and will get back to you within 1 business day.</p>
+                    <p>We have received your message and will usually get back to you within 1-2 business days.</p>
                     <p>Regards,<br/>ContextWorks Digital Systems Pvt. Ltd.</p>
                 `
             }
@@ -199,10 +201,11 @@ module.exports = async function (context, req) {
         const name = sanitizeText(req.body.name);
         const email = sanitizeText(req.body.email).toLowerCase();
         const organization = sanitizeText(req.body.organization);
+        const inquiryType = sanitizeText(req.body.inquiryType);
         const message = sanitizeText(req.body.message);
         const consent = req.body.consent === true || req.body.consent === 'yes';
 
-        if (!name || !email || !message || !consent) {
+        if (!name || !email || !inquiryType || !message || !consent) {
             context.res.status = 400;
             context.res.body = {
                 success: false,
@@ -224,6 +227,7 @@ module.exports = async function (context, req) {
             name,
             email,
             organization,
+            inquiryType,
             message,
             consent
         });
@@ -231,7 +235,7 @@ module.exports = async function (context, req) {
         context.res.status = 200;
         context.res.body = {
             success: true,
-            message: 'Your message has been sent successfully. We will get back to you within 1 business day.'
+            message: 'Your message has been sent successfully. We usually respond within 1-2 business days.'
         };
     } catch (error) {
         logError(context, 'Error processing contact form:', {
@@ -241,7 +245,7 @@ module.exports = async function (context, req) {
         context.res.status = 200;
         context.res.body = {
             success: true,
-            message: 'Your message has been received. If you do not hear back within 1 business day, please email maruthikiran@contextworksdigital.com directly.',
+            message: 'Your message has been received. If you do not hear back within 1-2 business days, please email maruthikiran@contextworksdigital.com directly.',
             deliveryStatus: 'failed'
         };
     }

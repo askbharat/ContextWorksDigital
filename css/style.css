@@ -6534,6 +6534,25 @@ html {
   flex-direction: column;
 }
 
+.form-helper-note,
+.form-warning-note {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 8px 0 0;
+}
+
+.form-helper-note {
+  color: #5b6472;
+}
+
+.form-warning-note {
+  color: #7a4b00;
+  background: #fff4ce;
+  border: 1px solid #f2c94c;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
 .form-label-pro {
   font-size: 15px;
   font-weight: 600;
