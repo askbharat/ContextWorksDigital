@@ -2665,9 +2665,14 @@ html {
 
 .patient-service-options label {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.48rem;
   color: #244a72;
+}
+
+.patient-service-options input[type="checkbox"] {
+  margin: 0;
+  flex: 0 0 auto;
 }
 
 .patient-honeypot {
