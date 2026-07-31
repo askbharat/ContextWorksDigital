@@ -41,6 +41,20 @@ const ALLOWED_ORIGINS = new Set([
   'http://localhost:3000',
 ]);
 
+function logError(context, message, details) {
+  if (context && context.log && typeof context.log.error === 'function') {
+    context.log.error(message, details);
+    return;
+  }
+
+  if (context && typeof context.log === 'function') {
+    context.log(`${message} ${JSON.stringify(details || {})}`);
+    return;
+  }
+
+  console.error(message, details || {});
+}
+
 function getEmailConfig() {
   const connectionString = process.env.COMMUNICATION_SERVICES_CONNECTION_STRING;
   const senderAddress = process.env.SENDER_EMAIL_ADDRESS;
@@ -419,7 +433,7 @@ module.exports = async function (context, req) {
     await sendNotificationEmail(context, registrationPayload);
   } catch (error) {
     const errorDetails = toEmailErrorDetails(error);
-    context.log.error('Patient interest email send failed', {
+    logError(context, 'Patient interest email send failed', {
       error: errorDetails,
     });
 
@@ -443,16 +457,18 @@ module.exports = async function (context, req) {
       fallbackStatus = fallbackResult.status;
     } catch (fallbackError) {
       fallbackStatus = 'failed';
-      context.log.error('Patient interest fallback notification failed', {
+      logError(context, 'Patient interest fallback notification failed', {
         error: toEmailErrorDetails(fallbackError),
       });
     }
 
-    context.res.status = 502;
+    context.res.status = 200;
     context.res.body = {
       success: false,
       message: 'We received your registration, but email delivery is currently unavailable. Please contact maruthikiran@contextworksdigital.com directly if urgent.',
       deliveryStatus: 'failed',
+      errorType: 'email_delivery_failed',
+      httpStatus: 502,
       fallbackStatus,
     };
     return;

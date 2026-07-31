@@ -311,11 +311,13 @@ module.exports = async function (context, req) {
             logError(context, 'Contact fallback notification failed:', toEmailErrorDetails(fallbackError));
         }
 
-        context.res.status = 502;
+        context.res.status = 200;
         context.res.body = {
             success: false,
             message: 'We received your message, but email delivery is currently unavailable. Please email maruthikiran@contextworksdigital.com directly while we resolve this issue.',
             deliveryStatus: 'failed',
+            errorType: 'email_delivery_failed',
+            httpStatus: 502,
             fallbackStatus
         };
     }
