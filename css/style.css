@@ -369,8 +369,8 @@ nav a.active {
 .abn-page .brand-logo img {
   display: block;
   width: auto;
-  max-width: 190px;
-  max-height: 48px;
+  max-width: 260px;
+  max-height: 64px;
   object-fit: contain;
 }
 
@@ -727,6 +727,15 @@ nav a.active {
 .hero-image img {
   width: 100%;
   max-width: 500px;
+  margin: 0 auto;
+}
+
+.home-banner-logo {
+  width: 100%;
+  max-width: 680px;
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
   margin: 0 auto;
 }
 
