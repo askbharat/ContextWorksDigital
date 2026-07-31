@@ -57,6 +57,55 @@ function getEmailConfig() {
   };
 }
 
+function getFallbackWebhookUrl() {
+  return process.env.PATIENT_INTEREST_FALLBACK_WEBHOOK_URL || process.env.FALLBACK_NOTIFY_WEBHOOK_URL || null;
+}
+
+function toEmailErrorDetails(error) {
+  const detail = {
+    message: error && error.message ? error.message : 'Unknown email error',
+  };
+
+  if (error && error.code) {
+    detail.code = error.code;
+  }
+
+  if (error && error.statusCode) {
+    detail.statusCode = error.statusCode;
+  }
+
+  if (error && error.name) {
+    detail.name = error.name;
+  }
+
+  if (error && error.details) {
+    detail.details = error.details;
+  }
+
+  return detail;
+}
+
+async function postFallbackNotification(payload) {
+  const url = getFallbackWebhookUrl();
+  if (!url) {
+    return { status: 'not_configured' };
+  }
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Fallback webhook failed with status ${response.status}.`);
+  }
+
+  return { status: 'sent' };
+}
+
 function escapeHtml(value) {
   return String(value || '')
     .replace(/&/g, '&amp;')
@@ -356,26 +405,55 @@ module.exports = async function (context, req) {
     serviceCount: services.length,
   });
 
+  const registrationPayload = {
+    fullName,
+    city,
+    email,
+    mobile,
+    preferredLanguage,
+    services,
+    consent,
+  };
+
   try {
-    await sendNotificationEmail(context, {
-      fullName,
-      city,
-      email,
-      mobile,
-      preferredLanguage,
-      services,
-      consent,
-    });
+    await sendNotificationEmail(context, registrationPayload);
   } catch (error) {
+    const errorDetails = toEmailErrorDetails(error);
     context.log.error('Patient interest email send failed', {
-      message: error && error.message ? error.message : 'Unknown error',
+      error: errorDetails,
     });
 
-    context.res.status = 200;
+    let fallbackStatus = 'not_attempted';
+    try {
+      const fallbackResult = await postFallbackNotification({
+        formType: 'patient-interest',
+        timestampUtc: new Date().toISOString(),
+        submission: {
+          fullName: registrationPayload.fullName,
+          city: registrationPayload.city,
+          email: registrationPayload.email,
+          emailMasked: maskEmail(registrationPayload.email),
+          mobileMasked: maskMobile(registrationPayload.mobile),
+          preferredLanguage: registrationPayload.preferredLanguage,
+          services: registrationPayload.services,
+          consent: registrationPayload.consent,
+        },
+        emailError: errorDetails,
+      });
+      fallbackStatus = fallbackResult.status;
+    } catch (fallbackError) {
+      fallbackStatus = 'failed';
+      context.log.error('Patient interest fallback notification failed', {
+        error: toEmailErrorDetails(fallbackError),
+      });
+    }
+
+    context.res.status = 502;
     context.res.body = {
-      success: true,
-      message: 'Interest registered successfully. Thank you for registering your interest in AskBharatNow.',
+      success: false,
+      message: 'We received your registration, but email delivery is currently unavailable. Please contact maruthikiran@contextworksdigital.com directly if urgent.',
       deliveryStatus: 'failed',
+      fallbackStatus,
     };
     return;
   }
