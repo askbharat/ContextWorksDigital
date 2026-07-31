@@ -699,7 +699,7 @@ nav a.active {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1fr) minmax(650px, 1.15fr);
   gap: var(--space-xl);
   align-items: center;
 }
@@ -750,11 +750,12 @@ nav a.active {
 
 .hero-workflow {
   width: 100%;
+  min-width: 650px;
   background: #ffffff;
   border: 1px solid #d7e3f1;
   border-radius: 18px;
   box-shadow: 0 12px 26px rgba(17, 47, 82, 0.1);
-  padding: 20px;
+  padding: 16px;
 }
 
 .hero-workflow-steps {
@@ -768,13 +769,13 @@ nav a.active {
 .hero-workflow-step {
   border: 1px solid #d8e4f1;
   border-radius: 14px;
-  padding: 14px 12px;
+  padding: 12px 11px;
   background: #ffffff;
   display: grid;
   grid-template-columns: 44px 1fr;
   gap: 10px;
   align-content: start;
-  min-height: 180px;
+  min-height: 162px;
 }
 
 .step-number {
@@ -799,14 +800,14 @@ nav a.active {
 }
 
 .step-icon svg {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
 }
 
 .hero-workflow-step h3 {
   grid-column: 1 / -1;
   margin: 4px 0 6px;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.25;
   color: #0b2e4f;
   font-weight: 800;
@@ -815,7 +816,7 @@ nav a.active {
 .hero-workflow-step p {
   grid-column: 1 / -1;
   margin: 0;
-  font-size: 15.5px;
+  font-size: 13.5px;
   line-height: 1.45;
   color: #123a5c;
 }
@@ -935,13 +936,13 @@ nav a.active {
 
 .patient-vault-panel h3 {
   margin: 0 0 2px;
-  font-size: 20px;
+  font-size: 17px;
   color: #0b2e4f;
 }
 
 .patient-vault-panel p {
   margin: 0;
-  font-size: 15.5px;
+  font-size: 13.5px;
   color: #123a5c;
 }
 
@@ -5439,16 +5440,50 @@ html {
   }
 
   .hero-workflow-steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
     gap: 10px;
   }
 
-  .workflow-arrow {
+  .hero-workflow {
+    min-width: 0;
+  }
+
+  .hero-workflow-step:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-workflow-steps .workflow-arrow:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    transform: none;
+  }
+
+  .hero-workflow-step:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .hero-workflow-steps .workflow-arrow:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
     transform: rotate(90deg);
   }
 
-  .hero-workflow-step {
-    min-height: 0;
+  .hero-workflow-step:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .hero-workflow-steps .workflow-arrow:nth-child(6) {
+    grid-column: 2;
+    grid-row: 3;
+    transform: none;
+  }
+
+  .hero-workflow-step:nth-child(7) {
+    grid-column: 3;
+    grid-row: 3;
   }
   
   .contact-layout {
@@ -5487,6 +5522,25 @@ html {
 
   .services-nav-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-workflow {
+    padding: 14px;
+  }
+
+  .hero-workflow-steps {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero-workflow-steps .workflow-arrow {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    transform: rotate(90deg);
+  }
+
+  .hero-workflow-step {
+    min-height: 0;
   }
   
   nav {
