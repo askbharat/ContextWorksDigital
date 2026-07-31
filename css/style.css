@@ -865,6 +865,10 @@ nav a.active {
   gap: 8px;
 }
 
+.hero-workflow-steps > * {
+  min-width: 0;
+}
+
 .hero-workflow-step {
   border: 1px solid #d8e4f1;
   border-radius: 14px;
@@ -910,6 +914,8 @@ nav a.active {
   line-height: 1.25;
   color: #0b2e4f;
   font-weight: 800;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero-workflow-step p {
@@ -918,6 +924,7 @@ nav a.active {
   font-size: 13.5px;
   line-height: 1.45;
   color: #123a5c;
+  overflow-wrap: anywhere;
 }
 
 .step-intake {
