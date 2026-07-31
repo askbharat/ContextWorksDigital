@@ -245,9 +245,15 @@
         formMessage.style.display = 'block';
         
         if (response.ok) {
-          formMessage.style.backgroundColor = '#d4edda';
-          formMessage.style.color = '#155724';
-          formMessage.style.border = '1px solid #c3e6cb';
+          if (result.deliveryStatus === 'failed') {
+            formMessage.style.backgroundColor = '#fff4ce';
+            formMessage.style.color = '#7a4b00';
+            formMessage.style.border = '1px solid #f2c94c';
+          } else {
+            formMessage.style.backgroundColor = '#d4edda';
+            formMessage.style.color = '#155724';
+            formMessage.style.border = '1px solid #c3e6cb';
+          }
           formMessage.textContent = result.message;
           
           // Reset form
