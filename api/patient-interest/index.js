@@ -125,7 +125,48 @@ async function sendNotificationEmail(context, payload) {
     throw new Error(`Email send did not complete successfully. Status: ${result && result.status ? result.status : 'unknown'}`);
   }
 
-  return result;
+  const ackSubject = 'AskBharatNow Future Access - Interest Registration Received';
+  const ackText = [
+    `Hello ${payload.fullName},`,
+    '',
+    'Thank you for registering your interest in AskBharatNow future patient and caregiver access.',
+    'Our team has received your details and will contact you when relevant pilot access becomes available.',
+    '',
+    'This registration is not for emergency care and does not provide medical advice.',
+    '',
+    'Regards,',
+    'ContextWorks Digital Systems Pvt. Ltd.',
+  ].join('\n');
+
+  const ackHtml = `
+    <p>Hello ${escapeHtml(payload.fullName)},</p>
+    <p>Thank you for registering your interest in <strong>AskBharatNow</strong> future patient and caregiver access.</p>
+    <p>Our team has received your details and will contact you when relevant pilot access becomes available.</p>
+    <p>This registration is not for emergency care and does not provide medical advice.</p>
+    <p>Regards,<br/>ContextWorks Digital Systems Pvt. Ltd.</p>
+  `;
+
+  const ackPoller = await client.beginSend({
+    senderAddress: emailConfig.senderAddress,
+    recipients: {
+      to: [{ address: payload.email }],
+    },
+    content: {
+      subject: ackSubject,
+      plainText: ackText,
+      html: ackHtml,
+    },
+    headers: {
+      'x-priority': '3',
+    },
+  });
+
+  const ackResult = await ackPoller.pollUntilDone();
+  if (!ackResult || (ackResult.status && ackResult.status.toLowerCase() !== 'succeeded')) {
+    throw new Error(`User acknowledgement email failed. Status: ${ackResult && ackResult.status ? ackResult.status : 'unknown'}`);
+  }
+
+  return { notification: result, acknowledgement: ackResult };
 }
 
 function getAllowedOrigin(req) {
