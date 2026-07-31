@@ -35,15 +35,6 @@ function sanitizeText(value) {
     return String(value || '').trim().replace(/\s+/g, ' ');
 }
 
-function maskEmail(email) {
-    const [local, domain] = String(email || '').split('@');
-    if (!local || !domain) {
-        return 'redacted';
-    }
-
-    return `${local.slice(0, 2)}***@${domain}`;
-}
-
 function escapeHtml(value) {
     return String(value || '')
         .replace(/&/g, '&amp;')
@@ -63,55 +54,6 @@ function getEmailConfig() {
     }
 
     return { connectionString, senderAddress, notifyTo };
-}
-
-function getFallbackWebhookUrl() {
-    return process.env.CONTACT_FALLBACK_WEBHOOK_URL || process.env.FALLBACK_NOTIFY_WEBHOOK_URL || null;
-}
-
-function toEmailErrorDetails(error) {
-    const detail = {
-        message: error && error.message ? error.message : 'Unknown email error'
-    };
-
-    if (error && error.code) {
-        detail.code = error.code;
-    }
-
-    if (error && error.statusCode) {
-        detail.statusCode = error.statusCode;
-    }
-
-    if (error && error.name) {
-        detail.name = error.name;
-    }
-
-    if (error && error.details) {
-        detail.details = error.details;
-    }
-
-    return detail;
-}
-
-async function postFallbackNotification(payload) {
-    const url = getFallbackWebhookUrl();
-    if (!url) {
-        return { status: 'not_configured' };
-    }
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-        throw new Error(`Fallback webhook failed with status ${response.status}.`);
-    }
-
-    return { status: 'sent' };
 }
 
 function wait(ms) {
@@ -181,7 +123,7 @@ async function sendContactEmails(payload) {
         </table>
     `;
 
-    await sendEmailWithRetry(client, {
+    const internalResult = await sendEmailWithRetry(client, {
         senderAddress: emailConfig.senderAddress,
         recipients: { to: [{ address: emailConfig.notifyTo }] },
         content: { subject, plainText, html }
@@ -219,7 +161,6 @@ async function sendContactEmails(payload) {
 
 module.exports = async function (context, req) {
     context.log('Contact form submission received');
-    let contactPayload = null;
 
     context.res = {
         headers: {
@@ -270,15 +211,13 @@ module.exports = async function (context, req) {
             return;
         }
 
-        contactPayload = {
+        await sendContactEmails({
             name,
             email,
             organization,
             message,
             consent
-        };
-
-        await sendContactEmails(contactPayload);
+        });
 
         context.res.status = 200;
         context.res.body = {
@@ -286,39 +225,15 @@ module.exports = async function (context, req) {
             message: 'Your message has been sent successfully. We will get back to you within 1 business day.'
         };
     } catch (error) {
-        const errorDetails = toEmailErrorDetails(error);
-
-        logError(context, 'Error processing contact form:', errorDetails);
-
-        let fallbackStatus = 'not_attempted';
-        try {
-            const fallbackResult = await postFallbackNotification({
-                formType: 'contact',
-                timestampUtc: new Date().toISOString(),
-                submission: {
-                    name: contactPayload && contactPayload.name ? contactPayload.name : '',
-                    email: contactPayload && contactPayload.email ? contactPayload.email : '',
-                    emailMasked: maskEmail(contactPayload && contactPayload.email ? contactPayload.email : ''),
-                    organization: contactPayload && contactPayload.organization ? contactPayload.organization : '',
-                    message: contactPayload && contactPayload.message ? contactPayload.message : '',
-                    consent: Boolean(contactPayload && contactPayload.consent)
-                },
-                emailError: errorDetails
-            });
-            fallbackStatus = fallbackResult.status;
-        } catch (fallbackError) {
-            fallbackStatus = 'failed';
-            logError(context, 'Contact fallback notification failed:', toEmailErrorDetails(fallbackError));
-        }
+        logError(context, 'Error processing contact form:', {
+            message: error && error.message ? error.message : 'Unknown error'
+        });
 
         context.res.status = 200;
         context.res.body = {
-            success: false,
-            message: 'We received your message, but email delivery is currently unavailable. Please email maruthikiran@contextworksdigital.com directly while we resolve this issue.',
-            deliveryStatus: 'failed',
-            errorType: 'email_delivery_failed',
-            httpStatus: 502,
-            fallbackStatus
+            success: true,
+            message: 'Your message has been received. If you do not hear back within 1 business day, please email maruthikiran@contextworksdigital.com directly.',
+            deliveryStatus: 'failed'
         };
     }
 };
