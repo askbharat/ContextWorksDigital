@@ -454,6 +454,10 @@ nav a.active {
   display: block;
 }
 
+.abn-page .nav-item-dropdown.force-closed .products-dropdown {
+  display: none !important;
+}
+
 .abn-page .products-dropdown a {
   display: block;
   min-height: 40px;

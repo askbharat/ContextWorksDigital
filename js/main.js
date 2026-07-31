@@ -24,10 +24,12 @@
 
 		function openMenu() {
 			window.clearTimeout(closeTimer);
+			dropdown.classList.remove('force-closed');
 			setOpenState(true);
 		}
 
 		function closeMenu() {
+			dropdown.classList.add('force-closed');
 			setOpenState(false);
 		}
 
