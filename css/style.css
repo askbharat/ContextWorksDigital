@@ -1144,6 +1144,17 @@ nav a.active {
   margin-bottom: 16px;
 }
 
+.founder-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #c6d8ef;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 16px;
+  display: block;
+}
+
 .credibility-fact-list {
   margin: 0;
   padding-left: 20px;
@@ -1222,6 +1233,11 @@ nav a.active {
   .founder-profile-card,
   .credibility-facts-card {
     padding: 22px;
+  }
+
+  .founder-photo {
+    width: 108px;
+    height: 108px;
   }
 
   .tech-logo-pill {
