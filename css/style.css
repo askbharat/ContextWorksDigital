@@ -278,7 +278,7 @@ p {
 
 .logo {
   display: block;
-  height: 116px;
+  height: 42px;
   width: auto;
   filter: none;
   transition: all var(--transition-base);
@@ -370,7 +370,7 @@ nav a.active {
   display: block;
   width: auto;
   max-width: 260px;
-  max-height: 64px;
+  max-height: 44px;
   object-fit: contain;
 }
 
@@ -626,7 +626,13 @@ nav a.active {
 
   .abn-page .brand-logo img {
     max-width: 170px;
-    max-height: 42px;
+    max-height: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 34px;
   }
 }
 
@@ -4935,7 +4941,7 @@ html {
   }
   
   .logo {
-    height: 44px;
+    height: 34px;
   }
   
   .footer-logo {
