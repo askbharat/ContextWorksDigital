@@ -4,27 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Microsoft AI consulting for healthcare, legal, and accounting industries. Compliance-aware automation with HIPAA and GDPR considerations."/>
-  <title>Industries | Microsoft AI Consulting for Healthcare, Legal & Accounting</title>
+  <title>Industries | AI Consulting for Healthcare, Legal, Accounting & Enterprise IT</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo-link">
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="ContextWorks Digital Systems Home">
         <img src="images/company-logo2.png" alt="ContextWorks Digital Systems" class="logo" />
       </a>
-      <nav>
+
+      <nav class="desktop-navigation" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Consulting</a>
+        <a href="products.html#askbharatnow">AskBharatNow</a>
+        <a href="industries.html" class="is-active">Industries</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a href="contact.html" class="header-cta">Book a Discovery Call</a>
+
+      <button
+        type="button"
+        class="mobile-menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        aria-label="Open site menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile" hidden>
+      <div class="mobile-navigation-panel">
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">Close</button>
         <a href="index.html">Home</a>
         <a href="services.html">Consulting</a>
         <a href="products.html#askbharatnow">AskBharatNow</a>
         <a href="industries.html">Industries</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-      </nav>
-    </div>
+        <a href="contact.html" class="mobile-cta-link">Book a Discovery Call</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Industries Hero -->
@@ -72,7 +98,7 @@
             <h4>What We Help With</h4>
             <ul class="industry-help-list">
               <li>Automating patient intake, registration, and insurance verification</li>
-              <li>Clinical workflow automation with HIPAA-aware design</li>
+              <li>Clinical and administrative workflow automation designed with privacy, security and regulatory considerations.</li>
               <li>Document processing for referrals, lab results, and insurance forms</li>
               <li>Staff support systems for policy and protocol access</li>
               <li>Appointment management and patient communication workflows</li>
@@ -83,9 +109,26 @@
             <h4>Why This Matters</h4>
             <div class="why-matters-content">
               <p>Healthcare AI must prioritize patient safety, data privacy, and regulatory compliance. Automation that bypasses clinical judgment or exposes PHI creates unacceptable risk.</p>
-              <p>Our approach ensures AI assists administrative workflows while maintaining strict separation from clinical decision-making, with full HIPAA compliance, audit trails, and human oversight at every critical point.</p>
+              <p>We design healthcare workflows with privacy, security, auditability and human oversight considerations. Where applicable, solutions can be aligned with organisational requirements relating to the DPDP Act, HIPAA and other relevant healthcare-data standards.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="services-nav-card">
+        <div class="services-nav-heading">
+          <h2>Looking for our digital-health product?</h2>
+          <p>AskBharatNow™ is our clinician-governed platform for AI-assisted medical-report structuring, clinician-reviewed guidance and longitudinal Patient Vault workflows.</p>
+        </div>
+        <div class="services-nav-grid">
+          <a href="products.html#askbharatnow" class="services-nav-item">
+            <strong>Explore AskBharatNow</strong>
+            <span>Clinician-governed digital-health platform</span>
+          </a>
         </div>
       </div>
     </div>
@@ -125,7 +168,7 @@
             <h4>Why This Matters</h4>
             <div class="why-matters-content">
               <p>Legal AI carries unique risks: incorrect analysis can lead to malpractice exposure, and data leakage can violate attorney-client privilege. Governance failures undermine trust and professional standing.</p>
-              <p>We design automation with mandatory human review checkpoints, strict data isolation, conflict management integration, and audit trails that support professional ethics rules and bar association compliance requirements.</p>
+              <p>We design automation with human-review checkpoints, access controls, data separation and audit trails that can support the organisation’s professional, ethical and governance requirements.</p>
             </div>
           </div>
         </div>
@@ -166,7 +209,7 @@
             <h4>Why This Matters</h4>
             <div class="why-matters-content">
               <p>Accounting firms handle sensitive financial data for multiple clients simultaneously. AI systems that allow cross-client data access or compromise professional independence create malpractice risk and regulatory exposure.</p>
-              <p>We implement multi-tenant isolation, SOC 2-aligned controls, audit trail logging, and solutions that respect CPA independence standards while enabling productivity gains during peak seasons.</p>
+              <p>We design solutions with tenant-aware data separation, role-based access, audit logging and security controls that can support the organisation’s applicable professional and governance requirements. SOC 2-aligned design considerations can be applied where relevant to the engagement.</p>
             </div>
           </div>
         </div>
@@ -232,8 +275,8 @@
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
           </div>
-          <h4>Compliance-First Design</h4>
-          <p>Every solution is architected with regulatory requirements, data sovereignty, and industry standards embedded from day one—not retrofitted later.</p>
+          <h4>Security and Compliance-Aware Design</h4>
+          <p>Privacy, security, data residency and relevant regulatory requirements are considered from discovery through implementation. Final compliance remains dependent on the organisation’s policies, legal assessment, operational controls and implementation environment.</p>
         </div>
 
         <div class="principle-card">
@@ -264,8 +307,8 @@
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <h4>Fixed-Scope, Low-Risk Pilots</h4>
-          <p>We start with defined pilot projects that prove value before scaling, avoiding open-ended engagements and minimizing organizational disruption.</p>
+          <h4>Defined-Scope Pilot Engagements</h4>
+          <p>We begin with a clearly defined workflow, user group and success criteria before considering broader implementation.</p>
         </div>
       </div>
     </div>
@@ -278,6 +321,17 @@
       <p>Let's start with a discovery conversation to explore your workflows, compliance requirements, and opportunities for responsible automation.</p>
       <div class="cta-buttons">
         <a href="contact.html" class="btn-primary">Discuss Your Industry Use Case</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted">
+    <div class="container">
+      <div class="services-nav-card">
+        <div class="services-nav-heading">
+          <h2>Advisory note</h2>
+          <p>ContextWorks Digital provides technology architecture, automation and implementation services. We do not provide medical, legal, accounting or regulatory-certification advice. Customers remain responsible for obtaining appropriate professional and legal assessments.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -305,6 +359,7 @@
           <a href="industries.html" class="site-footer__link">Healthcare</a>
           <a href="industries.html" class="site-footer__link">Legal & Professional Services</a>
           <a href="industries.html" class="site-footer__link">Accounting & Consulting</a>
+          <a href="industries.html" class="site-footer__link">Enterprise IT & Operations</a>
         </div>
         <div class="site-footer__col">
           <h4 class="site-footer__heading">Company</h4>

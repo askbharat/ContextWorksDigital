@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo-link">
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="ContextWorks Digital Systems Home">
         <img src="images/company-logo2.png" alt="ContextWorks Digital Systems" class="logo" />
       </a>
-      <nav>
+
+      <nav class="desktop-navigation" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="services.html">Consulting</a>
         <a href="products.html#askbharatnow">AskBharatNow</a>
@@ -22,9 +23,29 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-    </div>
-  </header>
 
+      <a href="contact.html" class="header-cta">Book a Discovery Call</a>
+
+      <button type="button" class="mobile-menu-button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open site menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile" hidden>
+      <div class="mobile-navigation-panel">
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">Close</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Consulting</a>
+        <a href="products.html#askbharatnow">AskBharatNow</a>
+        <a href="industries.html">Industries</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="mobile-cta-link">Book a Discovery Call</a>
+      </div>
+    </nav>
+  </header>
   <main>
     <section class="section section-light">
       <div class="container" style="max-width: 900px;">
