@@ -1,4 +1,5 @@
 const recentRequests = new Map();
+const { EmailClient } = require('@azure/communication-email');
 
 const RATE_LIMIT_MAX = 5;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
@@ -39,6 +40,93 @@ const ALLOWED_ORIGINS = new Set([
   'http://localhost:4280',
   'http://localhost:3000',
 ]);
+
+function getEmailConfig() {
+  const connectionString = process.env.COMMUNICATION_SERVICES_CONNECTION_STRING;
+  const senderAddress = process.env.SENDER_EMAIL_ADDRESS;
+  const notificationTo = process.env.PATIENT_INTEREST_NOTIFY_TO || 'maruthikiran@contextworksdigital.com';
+
+  if (!connectionString || !senderAddress || !notificationTo) {
+    return null;
+  }
+
+  return {
+    connectionString,
+    senderAddress,
+    notificationTo,
+  };
+}
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+async function sendNotificationEmail(context, payload) {
+  const emailConfig = getEmailConfig();
+  if (!emailConfig) {
+    throw new Error('Email configuration is missing. Set COMMUNICATION_SERVICES_CONNECTION_STRING, SENDER_EMAIL_ADDRESS, and PATIENT_INTEREST_NOTIFY_TO.');
+  }
+
+  const client = new EmailClient(emailConfig.connectionString);
+
+  const servicesText = payload.services.join(', ');
+  const subject = `New Patient Interest Registration - ${payload.fullName}`;
+  const textBody = [
+    'A new future patient access registration was submitted on contextworksdigital.com.',
+    '',
+    `Name: ${payload.fullName}`,
+    `City: ${payload.city}`,
+    `Email: ${payload.email}`,
+    `Mobile: ${payload.mobile}`,
+    `Preferred Language: ${payload.preferredLanguage}`,
+    `Services: ${servicesText}`,
+    `Consent: ${payload.consent ? 'Yes' : 'No'}`,
+    `Timestamp (UTC): ${new Date().toISOString()}`,
+  ].join('\n');
+
+  const htmlBody = `
+    <h2>New Future Patient Access Registration</h2>
+    <p>A new registration was submitted on <strong>contextworksdigital.com</strong>.</p>
+    <table cellpadding="6" cellspacing="0" border="0">
+      <tr><td><strong>Name</strong></td><td>${escapeHtml(payload.fullName)}</td></tr>
+      <tr><td><strong>City</strong></td><td>${escapeHtml(payload.city)}</td></tr>
+      <tr><td><strong>Email</strong></td><td>${escapeHtml(payload.email)}</td></tr>
+      <tr><td><strong>Mobile</strong></td><td>${escapeHtml(payload.mobile)}</td></tr>
+      <tr><td><strong>Preferred Language</strong></td><td>${escapeHtml(payload.preferredLanguage)}</td></tr>
+      <tr><td><strong>Services</strong></td><td>${escapeHtml(servicesText)}</td></tr>
+      <tr><td><strong>Consent</strong></td><td>${payload.consent ? 'Yes' : 'No'}</td></tr>
+      <tr><td><strong>Timestamp (UTC)</strong></td><td>${escapeHtml(new Date().toISOString())}</td></tr>
+    </table>
+  `;
+
+  const poller = await client.beginSend({
+    senderAddress: emailConfig.senderAddress,
+    recipients: {
+      to: [{ address: emailConfig.notificationTo }],
+    },
+    content: {
+      subject,
+      plainText: textBody,
+      html: htmlBody,
+    },
+    headers: {
+      'x-priority': '3',
+    },
+  });
+
+  const result = await poller.pollUntilDone();
+
+  if (!result || (result.status && result.status.toLowerCase() !== 'succeeded')) {
+    throw new Error(`Email send did not complete successfully. Status: ${result && result.status ? result.status : 'unknown'}`);
+  }
+
+  return result;
+}
 
 function getAllowedOrigin(req) {
   const origin = req.headers.origin;
@@ -226,6 +314,29 @@ module.exports = async function (context, req) {
     preferredLanguage,
     serviceCount: services.length,
   });
+
+  try {
+    await sendNotificationEmail(context, {
+      fullName,
+      city,
+      email,
+      mobile,
+      preferredLanguage,
+      services,
+      consent,
+    });
+  } catch (error) {
+    context.log.error('Patient interest email send failed', {
+      message: error && error.message ? error.message : 'Unknown error',
+    });
+
+    context.res.status = 500;
+    context.res.body = {
+      success: false,
+      message: 'Your interest was received, but notification delivery failed. Please email maruthikiran@contextworksdigital.com directly while we resolve this.',
+    };
+    return;
+  }
 
   context.res.status = 200;
   context.res.body = {
