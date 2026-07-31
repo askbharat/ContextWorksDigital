@@ -2238,12 +2238,92 @@ html {
 }
 
 #patient-early-access {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 110px;
 }
 
 .patient-early-access {
   padding: 72px 0;
   background: #ffffff;
+}
+
+.patient-early-access .section-container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.patient-early-access .section-label {
+  display: inline-block;
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #005a9e;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.patient-early-access h2 {
+  margin-bottom: 0.75rem;
+}
+
+.patient-capabilities {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.patient-capabilities article {
+  background: #ffffff;
+  border: 1px solid #dce7f2;
+  border-radius: 12px;
+  padding: 0.95rem;
+  color: #204468;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.patient-journey {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  background: #f8fbff;
+  border: 1px solid #d6e6f5;
+  border-radius: 14px;
+  padding: 0.9rem;
+  color: #21466d;
+  font-weight: 600;
+}
+
+.patient-journey span {
+  color: #0078d4;
+  font-weight: 700;
+}
+
+.patient-early-access-cta {
+  margin-top: 1rem;
+  border: 1px solid #cfe2f4;
+  background: linear-gradient(140deg, #f2f8ff, #ffffff);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.1rem;
+  border-radius: 10px;
+  border: 2px solid #0078d4;
+  color: #0078d4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: rgba(0, 120, 212, 0.1);
 }
 
 .abn-sr-only {
@@ -3200,6 +3280,10 @@ html {
   .abn-journey-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .patient-capabilities {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -3216,6 +3300,22 @@ html {
   .abn-audience-grid,
   .abn-revenue-grid {
     grid-template-columns: 1fr;
+  }
+
+  .patient-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-journey {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .patient-journey span {
+    display: block;
+    text-align: center;
+    transform: rotate(90deg);
   }
 
   .abn-workflow-desktop {
