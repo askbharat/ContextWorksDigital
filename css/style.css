@@ -2233,6 +2233,19 @@ button[type="submit"]:hover,
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#patient-early-access {
+  scroll-margin-top: 100px;
+}
+
+.patient-early-access {
+  padding: 72px 0;
+  background: #ffffff;
+}
+
 .abn-sr-only {
   position: absolute;
   width: 1px;
@@ -2403,36 +2416,6 @@ button[type="submit"]:hover,
   font-size: 0.96rem;
   font-weight: 600;
   text-align: center;
-}
-
-.abn-workflow-mobile {
-  display: none;
-}
-
-.abn-workflow-mobile .abn-node {
-  min-height: 108px;
-}
-
-.abn-workflow-mobile .abn-node h3 {
-  font-size: 13px;
-}
-
-.abn-mobile-nodes {
-  display: grid;
-  gap: 0.72rem;
-}
-
-.abn-hero-lines-mobile {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: calc(100% - 16px);
-}
-
-.abn-workflow-mobile {
-  position: relative;
-  padding: 0.5rem 0;
 }
 
 .abn-problem-grid {
@@ -3236,11 +3219,20 @@ button[type="submit"]:hover,
   }
 
   .abn-workflow-desktop {
+    min-height: auto;
+  }
+
+  .abn-hero-lines {
     display: none;
   }
 
-  .abn-workflow-mobile {
-    display: block;
+  .abn-hero-nodes {
+    grid-template-columns: 1fr;
+    gap: 0.72rem;
+  }
+
+  .abn-node {
+    min-height: 108px;
   }
 
   .abn-node h3 {
