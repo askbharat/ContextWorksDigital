@@ -2114,6 +2114,36 @@ button[type="submit"]:hover,
   margin: 0 auto;
 }
 
+.services-credibility {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 860px;
+  margin: 1.25rem auto 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--accent-color);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+}
+
+.services-credibility strong {
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.services-credibility span {
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+.services-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 /* =========================
    PRODUCTS PAGE
 ========================= */
@@ -4994,6 +5024,13 @@ html {
   color: var(--color-success);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-lg);
+}
+
+.outcome-qualifier {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
 }
 
 /* Info Boxes (Sidebar) */
