@@ -2248,6 +2248,7 @@ button[type="submit"]:hover,
 .abn-hero {
   position: relative;
   text-align: left;
+  overflow-x: clip;
 }
 
 .abn-bg-shape {
