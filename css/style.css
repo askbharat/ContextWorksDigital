@@ -6083,6 +6083,79 @@ html {
   margin-bottom: 40px;
 }
 
+.founder-header--profile {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.founder-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.founder-profile-copy {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+.founder-kicker {
+  margin: 0 0 8px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b4f8a;
+  font-weight: 700;
+}
+
+.founder-name {
+  font-size: 34px;
+  line-height: 1.15;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.founder-title {
+  margin: 0 0 14px;
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+.founder-bio {
+  margin: 0 0 16px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.founder-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.founder-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #f0f7ff;
+  color: #0b4f8a;
+  font-weight: 600;
+}
+
+.founder-link:hover,
+.founder-link:focus-visible {
+  background: #dfeeff;
+  color: #083b67;
+}
+
 .founder-icon {
   width: 80px;
   height: 80px;
