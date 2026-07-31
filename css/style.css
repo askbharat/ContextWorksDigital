@@ -1104,17 +1104,10 @@ nav a.active {
   padding-top: 62px;
 }
 
-.home-trust-strip {
-  padding: 14px 0;
-  background: #f6f9ff;
-  border-top: 1px solid #d9e4f2;
-  border-bottom: 1px solid #d9e4f2;
-}
-
 .trust-strip {
-  margin: 0 auto;
-  max-width: 1040px;
-  text-align: center;
+  margin: 18px 0 0;
+  max-width: 760px;
+  text-align: left;
   color: #0f3d64;
   font-size: 16px;
   font-weight: 600;
@@ -1241,7 +1234,7 @@ nav a.active {
 
   .trust-strip {
     font-size: 16px;
-    margin-bottom: 26px;
+    margin: 18px 0 0;
   }
 
   .credibility-grid {
