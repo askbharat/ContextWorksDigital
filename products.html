@@ -225,20 +225,79 @@
         <p class="abn-model-label">Planned direct-access pathway</p>
 
         <div class="patient-early-access-cta">
-          <h3>Interested in Early Patient Access?</h3>
+          <h3>Interested in Future Patient Access?</h3>
 
           <p>
-            Patients and caregivers may register interest in report
-            understanding, clinician-reviewed guidance, expert second
-            opinions, and Patient Vault access as the direct service
-            pathway is introduced.
+            Patients and caregivers can register their interest in AI-assisted report understanding,
+            clinician-reviewed guidance, expert second opinions, and longitudinal Patient Vault services.
+            We will contact interested users when pilot access becomes available.
           </p>
 
-          <a
-            href="mailto:maruthikiran@contextworksdigital.com?subject=Patient%20Early%20Access%20-%20AskBharatNow"
-            class="button-secondary">
-            Join Patient Early Access
-          </a>
+          <form id="patient-interest-form" class="patient-interest-form" method="post" novalidate>
+            <div class="patient-form-grid">
+              <div class="patient-form-field">
+                <label for="patient-full-name">Full Name</label>
+                <input id="patient-full-name" name="fullName" type="text" autocomplete="name" required maxlength="80" />
+              </div>
+
+              <div class="patient-form-field">
+                <label for="patient-city">City</label>
+                <input id="patient-city" name="city" type="text" autocomplete="address-level2" required maxlength="80" />
+              </div>
+
+              <div class="patient-form-field">
+                <label for="patient-email">Email Address</label>
+                <input id="patient-email" name="email" type="email" autocomplete="email" required maxlength="120" />
+              </div>
+
+              <div class="patient-form-field">
+                <label for="patient-mobile">Mobile Number</label>
+                <input id="patient-mobile" name="mobile" type="tel" autocomplete="tel" required maxlength="20" inputmode="tel" />
+              </div>
+
+              <div class="patient-form-field patient-form-field-full">
+                <label for="patient-language">Preferred Language</label>
+                <input id="patient-language" name="preferredLanguage" type="text" required maxlength="40" />
+              </div>
+            </div>
+
+            <fieldset class="patient-service-fieldset">
+              <legend>Service of Interest</legend>
+              <div class="patient-service-options">
+                <label><input type="checkbox" name="services" value="AI-Assisted Report Understanding" /> AI-Assisted Report Understanding</label>
+                <label><input type="checkbox" name="services" value="Clinician-Reviewed Guidance" /> Clinician-Reviewed Guidance</label>
+                <label><input type="checkbox" name="services" value="Expert Second Opinion" /> Expert Second Opinion</label>
+                <label><input type="checkbox" name="services" value="Longitudinal Patient Vault" /> Longitudinal Patient Vault</label>
+                <label><input type="checkbox" name="services" value="Caregiver Support" /> Caregiver Support</label>
+                <label><input type="checkbox" name="services" value="General Product Updates" /> General Product Updates</label>
+              </div>
+            </fieldset>
+
+            <div class="patient-honeypot" aria-hidden="true">
+              <label for="patient-website">Website</label>
+              <input id="patient-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="patient-consent-row">
+              <label class="patient-consent-label">
+                <input id="patient-consent" name="consent" type="checkbox" required />
+                <span>I agree that ContextWorks Digital Systems Pvt. Ltd. may contact me regarding future AskBharatNow pilot access and product updates. I understand that this registration does not provide medical advice or guarantee access to the service.</span>
+              </label>
+              <p class="patient-privacy-link">Read our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div id="patient-form-feedback" class="patient-form-feedback" role="alert" aria-live="assertive"></div>
+
+            <button type="submit" class="button-secondary patient-interest-submit">Register Your Interest</button>
+          </form>
+
+          <p class="patient-interest-notice">
+            This form is only for registering interest in future access. Please do not submit medical reports,
+            symptoms, diagnoses, prescriptions, or other sensitive health information. AskBharatNow is not an
+            emergency service and does not provide medical advice through this registration form.
+          </p>
+
+          <p id="patient-form-success" class="patient-form-success" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>

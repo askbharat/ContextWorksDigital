@@ -2309,6 +2309,116 @@ html {
   padding: 1rem;
 }
 
+.patient-interest-form {
+  margin-top: 0.95rem;
+}
+
+.patient-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.patient-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.patient-form-field-full {
+  grid-column: 1 / -1;
+}
+
+.patient-form-field label,
+.patient-service-fieldset legend {
+  font-weight: 700;
+  color: #17395f;
+}
+
+.patient-form-field input {
+  border: 1px solid #b9d1e8;
+  border-radius: 10px;
+  min-height: 46px;
+  padding: 0.62rem 0.75rem;
+  font: inherit;
+  color: #17395f;
+  background: #ffffff;
+}
+
+.patient-form-field input:focus-visible,
+.patient-service-options input:focus-visible,
+.patient-consent-label input:focus-visible {
+  outline: 3px solid rgba(0, 120, 212, 0.35);
+  outline-offset: 2px;
+}
+
+.patient-form-field input[aria-invalid="true"] {
+  border-color: #c62828;
+  background: #fff7f7;
+}
+
+.patient-service-fieldset {
+  margin: 0.95rem 0 0;
+  border: 1px solid #cbdff1;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.patient-service-options {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.8rem;
+}
+
+.patient-service-options label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.48rem;
+  color: #244a72;
+}
+
+.patient-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.patient-consent-row {
+  margin-top: 0.95rem;
+}
+
+.patient-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.56rem;
+  color: #25486d;
+}
+
+.patient-privacy-link {
+  margin: 0.45rem 0 0;
+  font-size: 0.92rem;
+}
+
+.patient-privacy-link a {
+  color: #005a9e;
+  font-weight: 700;
+}
+
+.patient-form-feedback {
+  margin-top: 0.85rem;
+  min-height: 1.3rem;
+  color: #b42318;
+  font-weight: 600;
+}
+
+.patient-interest-submit {
+  margin-top: 0.25rem;
+  min-height: 48px;
+}
+
 .button-secondary {
   display: inline-flex;
   align-items: center;
@@ -2316,6 +2426,7 @@ html {
   padding: 0.72rem 1.1rem;
   border-radius: 10px;
   border: 2px solid #0078d4;
+  background: #ffffff;
   color: #0078d4;
   font-weight: 700;
   text-decoration: none;
@@ -2324,6 +2435,22 @@ html {
 .button-secondary:hover,
 .button-secondary:focus-visible {
   background: rgba(0, 120, 212, 0.1);
+}
+
+.patient-interest-notice {
+  margin-top: 0.95rem;
+  padding: 0.75rem;
+  border: 1px solid #d6e6f4;
+  border-radius: 10px;
+  background: #f8fbff;
+  color: #2d4f74;
+}
+
+.patient-form-success {
+  margin-top: 0.8rem;
+  color: #0d572d;
+  font-weight: 600;
+  min-height: 1.3rem;
 }
 
 .abn-sr-only {
@@ -3284,6 +3411,10 @@ html {
   .patient-capabilities {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .patient-service-options {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3303,6 +3434,10 @@ html {
   }
 
   .patient-capabilities {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-form-grid {
     grid-template-columns: 1fr;
   }
 

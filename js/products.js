@@ -239,6 +239,128 @@
     cards.forEach((card) => observer.observe(card));
   }
 
+  function setupPatientInterestForm() {
+    const form = document.getElementById('patient-interest-form');
+    const feedback = document.getElementById('patient-form-feedback');
+    const successMessage = document.getElementById('patient-form-success');
+
+    if (!form || !feedback || !successMessage) {
+      return;
+    }
+
+    const serviceCheckboxes = Array.from(form.querySelectorAll('input[name="services"]'));
+
+    function setError(message, fields) {
+      feedback.textContent = message;
+      successMessage.textContent = '';
+      fields.forEach((field) => field && field.setAttribute('aria-invalid', 'true'));
+      if (fields[0]) {
+        fields[0].focus();
+      }
+    }
+
+    function clearErrorState() {
+      feedback.textContent = '';
+      const invalidFields = form.querySelectorAll('[aria-invalid="true"]');
+      invalidFields.forEach((field) => field.removeAttribute('aria-invalid'));
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrorState();
+      successMessage.textContent = '';
+
+      const fullName = form.querySelector('#patient-full-name');
+      const city = form.querySelector('#patient-city');
+      const email = form.querySelector('#patient-email');
+      const mobile = form.querySelector('#patient-mobile');
+      const preferredLanguage = form.querySelector('#patient-language');
+      const consent = form.querySelector('#patient-consent');
+      const website = form.querySelector('#patient-website');
+
+      if (!fullName.value.trim()) {
+        setError('Please enter your full name.', [fullName]);
+        return;
+      }
+
+      if (!city.value.trim()) {
+        setError('Please enter your city.', [city]);
+        return;
+      }
+
+      if (!email.value.trim()) {
+        setError('Please enter your email address.', [email]);
+        return;
+      }
+
+      if (!mobile.value.trim()) {
+        setError('Please enter your mobile number.', [mobile]);
+        return;
+      }
+
+      if (!preferredLanguage.value.trim()) {
+        setError('Please enter your preferred language.', [preferredLanguage]);
+        return;
+      }
+
+      const selectedServices = serviceCheckboxes.filter((item) => item.checked).map((item) => item.value);
+      if (!selectedServices.length) {
+        setError('Please select at least one service of interest.', [serviceCheckboxes[0]]);
+        return;
+      }
+
+      if (!consent.checked) {
+        setError('Please provide consent to continue.', [consent]);
+        return;
+      }
+
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.textContent : 'Register Your Interest';
+
+      if (submitButton) {
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+      }
+
+      try {
+        const response = await fetch('/api/patient-interest', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            fullName: fullName.value.trim(),
+            city: city.value.trim(),
+            email: email.value.trim(),
+            mobile: mobile.value.trim(),
+            preferredLanguage: preferredLanguage.value.trim(),
+            services: selectedServices,
+            consent: consent.checked,
+            website: website.value.trim(),
+          }),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok || !data.success) {
+          const message = data.message || 'Unable to submit your request right now. Please try again.';
+          feedback.textContent = message;
+          return;
+        }
+
+        form.reset();
+        successMessage.textContent = 'Thank you for registering your interest in AskBharatNow\u2122. We will contact you when a relevant patient or caregiver pilot becomes available.';
+      } catch (_error) {
+        feedback.textContent = 'Unable to submit your request right now. Please try again.';
+      } finally {
+        if (submitButton) {
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        }
+      }
+    });
+  }
+
   revealElements();
   animateHeroWorkflow();
   animateVaultStage();
@@ -246,4 +368,5 @@
   setupJourneyActivation();
   animateCounters();
   activateCapabilityCards();
+  setupPatientInterestForm();
 })();
