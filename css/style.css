@@ -363,7 +363,7 @@ nav a.active {
 
 .abn-page .header-container {
   width: min(100% - 40px, 1200px);
-  min-height: 76px;
+  min-height: 86px;
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -380,8 +380,8 @@ nav a.active {
 .abn-page .brand-logo img {
   display: block;
   width: auto;
-  max-width: 290px;
-  max-height: 50px;
+  max-width: 340px;
+  max-height: 62px;
   object-fit: contain;
 }
 
@@ -627,7 +627,7 @@ nav a.active {
 
 @media (max-width: 600px) {
   .abn-page .header-container {
-    min-height: 68px;
+    min-height: 74px;
     gap: 14px;
   }
 
@@ -636,8 +636,8 @@ nav a.active {
   }
 
   .abn-page .brand-logo img {
-    max-width: 188px;
-    max-height: 38px;
+    max-width: 230px;
+    max-height: 46px;
   }
 }
 
