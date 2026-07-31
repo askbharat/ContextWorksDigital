@@ -5817,14 +5817,40 @@ html {
   .hero-workflow-steps .workflow-arrow {
     grid-column: auto !important;
     grid-row: auto !important;
+    position: relative;
+    width: 24px;
+    height: 38px;
     align-self: center;
-    margin: 2px 0 6px;
-    transform: rotate(90deg) !important;
+    margin: 2px auto 8px;
+    transform: none !important;
   }
 
   .hero-workflow-steps .workflow-arrow svg {
-    width: 24px;
-    height: 40px;
+    display: none;
+  }
+
+  .hero-workflow-steps .workflow-arrow::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 10px;
+    width: 2px;
+    background: #16486f;
+    border-radius: 999px;
+    transform: translateX(-50%);
+  }
+
+  .hero-workflow-steps .workflow-arrow::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #16486f;
+    border-bottom: 2px solid #16486f;
+    transform: translateX(-50%) rotate(45deg);
   }
 
   .hero-workflow-step {
