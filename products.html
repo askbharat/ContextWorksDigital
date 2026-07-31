@@ -16,29 +16,75 @@
 </head>
 <body class="abn-page">
 
-  <header class="header">
-    <div class="container">
-      <a href="index.html" class="logo-link">
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="ContextWorks Digital Systems Home">
         <img src="images/company-logo.svg" alt="ContextWorks Digital Systems" class="logo" />
       </a>
-      <nav>
+
+      <nav class="desktop-navigation" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="products.html#patient-early-access">Patient Early Access</a>
+        <div class="nav-item nav-item-dropdown" data-dropdown>
+          <button
+            type="button"
+            class="nav-link nav-link-button is-active"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="products-dropdown-menu">
+            Products
+          </button>
+          <div id="products-dropdown-menu" class="products-dropdown" role="menu" aria-label="Products submenu">
+            <a role="menuitem" href="/products.html#askbharatnow">AskBharatNow</a>
+            <a role="menuitem" href="/products.html#patient-vault">Patient Vault</a>
+            <a role="menuitem" href="/products.html#patient-early-access">Patient Early Access</a>
+            <a role="menuitem" href="/products.html#human-oversight">Human Oversight</a>
+          </div>
+        </div>
         <a href="industries.html">Industries</a>
         <a href="how-we-work.html">How We Work</a>
         <a href="about.html">About</a>
-        <a href="mailto:maruthikiran@contextworksdigital.com?subject=Clinic%20Pilot%20Interest%20%E2%80%93%20AskBharatNow&body=Hello%20AskBharatNow%20Team,%0A%0AWe%20are%20interested%20in%20exploring%20a%20clinic%20pilot.%0A%0AOrganisation%20Name:%0AContact%20Person:%0ASpecialty:%0ACity:%0APhone:%0AEmail:" class="btn-nav">Clinic Pilot</a>
       </nav>
+
+      <a href="mailto:maruthikiran@contextworksdigital.com?subject=Clinic%20Pilot%20Interest%20%E2%80%93%20AskBharatNow&body=Hello%20AskBharatNow%20Team,%0A%0AWe%20are%20interested%20in%20exploring%20a%20clinic%20pilot.%0A%0AOrganisation%20Name:%0AContact%20Person:%0ASpecialty:%0ACity:%0APhone:%0AEmail:" class="header-cta">Clinic Pilot</a>
+
+      <button
+        type="button"
+        class="mobile-menu-button"
+        aria-expanded="false"
+        aria-controls="mobile-navigation"
+        aria-label="Open site menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+
+    <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile" hidden>
+      <div class="mobile-navigation-panel">
+        <button type="button" class="mobile-menu-close" aria-label="Close menu">Close</button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <div class="mobile-products-group" aria-label="Products links">
+          <a href="/products.html" class="mobile-products-heading">Products</a>
+          <a href="/products.html#askbharatnow" class="mobile-sub-link">AskBharatNow</a>
+          <a href="/products.html#patient-vault" class="mobile-sub-link">Patient Vault</a>
+          <a href="/products.html#patient-early-access" class="mobile-sub-link">Patient Early Access</a>
+          <a href="/products.html#human-oversight" class="mobile-sub-link">Human Oversight</a>
+        </div>
+        <a href="industries.html">Industries</a>
+        <a href="how-we-work.html">How We Work</a>
+        <a href="about.html">About</a>
+        <a href="mailto:maruthikiran@contextworksdigital.com?subject=Clinic%20Pilot%20Interest%20%E2%80%93%20AskBharatNow&body=Hello%20AskBharatNow%20Team,%0A%0AWe%20are%20interested%20in%20exploring%20a%20clinic%20pilot.%0A%0AOrganisation%20Name:%0AContact%20Person:%0ASpecialty:%0ACity:%0APhone:%0AEmail:" class="mobile-cta-link">Clinic Pilot</a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <section class="page-hero products-hero abn-hero">
+    <section id="askbharatnow" class="page-hero products-hero abn-hero">
       <div class="abn-bg-shape abn-bg-shape--one" aria-hidden="true"></div>
       <div class="abn-bg-shape abn-bg-shape--two" aria-hidden="true"></div>
-      <div class="container abn-hero-grid">
+      <div class="abn-hero-grid">
         <div class="abn-hero-copy">
           <span class="eyebrow js-reveal">Flagship healthcare product of ContextWorks Digital Systems Pvt. Ltd.</span>
           <h1 class="abn-hero-title js-reveal" data-delay="80"><span class="brand-name" aria-label="AskBharatNow">AskBharatNow<span class="brand-superscript" aria-hidden="true">™</span></span> <span class="abn-title-line">AI Clinical OS</span></h1>

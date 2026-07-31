@@ -94,7 +94,7 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 100px;
 }
 
 body {
@@ -336,6 +336,294 @@ nav a.active {
   background: var(--color-primary-hover) !important;
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
+}
+
+/* =========================
+   PRODUCTS HEADER LAYOUT
+========================= */
+.abn-page .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 90, 158, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.abn-page .header-container {
+  width: min(100% - 40px, 1200px);
+  min-height: 76px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.abn-page .brand-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.abn-page .brand-logo img {
+  display: block;
+  width: auto;
+  max-width: 190px;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.abn-page .desktop-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2vw, 30px);
+  margin-left: auto;
+}
+
+.abn-page .desktop-navigation > a,
+.abn-page .nav-link-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.abn-page .desktop-navigation > a:hover,
+.abn-page .nav-link-button:hover,
+.abn-page .desktop-navigation > a:focus-visible,
+.abn-page .nav-link-button:focus-visible {
+  color: var(--color-primary);
+}
+
+.abn-page .desktop-navigation > a,
+.abn-page .nav-item {
+  position: relative;
+}
+
+.abn-page .desktop-navigation > a.is-active,
+.abn-page .nav-link-button.is-active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.abn-page .desktop-navigation > a.is-active::after,
+.abn-page .nav-link-button.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.abn-page .nav-item-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.abn-page .products-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 90, 158, 0.16);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(16, 35, 62, 0.14);
+  display: none;
+}
+
+.abn-page .nav-item-dropdown.is-open .products-dropdown,
+.abn-page .nav-item-dropdown:hover .products-dropdown,
+.abn-page .nav-item-dropdown:focus-within .products-dropdown {
+  display: block;
+}
+
+.abn-page .products-dropdown a {
+  display: block;
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #244b72;
+}
+
+.abn-page .products-dropdown a:hover,
+.abn-page .products-dropdown a:focus-visible {
+  background: #f2f7fc;
+  color: var(--color-primary);
+}
+
+.abn-page .header-cta {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0 22px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+.abn-page .header-cta:hover,
+.abn-page .header-cta:focus-visible {
+  background: var(--color-primary-hover);
+}
+
+.abn-page .mobile-menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(0, 90, 158, 0.3);
+  border-radius: 10px;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.abn-page .mobile-menu-button span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #1d4369;
+  border-radius: 2px;
+}
+
+.abn-page .mobile-navigation {
+  border-top: 1px solid rgba(0, 90, 158, 0.12);
+  background: #ffffff;
+}
+
+.abn-page .mobile-navigation[hidden] {
+  display: none !important;
+}
+
+.abn-page .mobile-navigation-panel {
+  width: min(100% - 40px, 1200px);
+  margin-inline: auto;
+  padding: 14px 0 20px;
+  display: grid;
+  gap: 4px;
+}
+
+.abn-page .mobile-navigation-panel > a,
+.abn-page .mobile-products-heading,
+.abn-page .mobile-sub-link,
+.abn-page .mobile-cta-link,
+.abn-page .mobile-menu-close {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 6px;
+  border-radius: 8px;
+  color: #1b3d61;
+}
+
+.abn-page .mobile-navigation-panel > a:hover,
+.abn-page .mobile-products-heading:hover,
+.abn-page .mobile-sub-link:hover,
+.abn-page .mobile-cta-link:hover,
+.abn-page .mobile-navigation-panel > a:focus-visible,
+.abn-page .mobile-products-heading:focus-visible,
+.abn-page .mobile-sub-link:focus-visible,
+.abn-page .mobile-cta-link:focus-visible {
+  background: #f2f7fc;
+  color: var(--color-primary);
+}
+
+.abn-page .mobile-products-group {
+  display: grid;
+  gap: 2px;
+}
+
+.abn-page .mobile-products-heading {
+  font-weight: 600;
+}
+
+.abn-page .mobile-sub-link {
+  padding-left: 22px;
+  font-size: 15px;
+}
+
+.abn-page .mobile-cta-link {
+  margin-top: 4px;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.abn-page .mobile-cta-link:hover,
+.abn-page .mobile-cta-link:focus-visible {
+  color: #ffffff;
+  background: var(--color-primary-hover);
+}
+
+.abn-page .mobile-menu-close {
+  border: 1px solid rgba(0, 90, 158, 0.26);
+  background: #ffffff;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.abn-page.menu-open {
+  overflow: hidden;
+}
+
+.abn-page .abn-hero-grid {
+  width: min(100% - 40px, 1200px);
+  margin-inline: auto;
+}
+
+@media (max-width: 1050px) {
+  .abn-page .desktop-navigation {
+    display: none;
+  }
+
+  .abn-page .mobile-menu-button {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .abn-page .header-container {
+    min-height: 68px;
+    gap: 14px;
+  }
+
+  .abn-page .header-cta {
+    display: none;
+  }
+
+  .abn-page .brand-logo img {
+    max-width: 170px;
+    max-height: 42px;
+  }
 }
 
 /* =========================
