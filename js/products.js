@@ -88,6 +88,32 @@
     observer.observe(vault);
   }
 
+  function animatePatientJourney() {
+    const patientJourney = document.querySelector('.abn-patient-journey');
+    if (!patientJourney) {
+      return;
+    }
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      patientJourney.classList.add('is-animated');
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            patientJourney.classList.add('is-animated');
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(patientJourney);
+  }
+
   function setupJourneyActivation() {
     const steps = Array.from(document.querySelectorAll('.abn-journey-step'));
     const progress = document.querySelector('.abn-journey-progress');
@@ -216,6 +242,7 @@
   revealElements();
   animateHeroWorkflow();
   animateVaultStage();
+  animatePatientJourney();
   setupJourneyActivation();
   animateCounters();
   activateCapabilityCards();
