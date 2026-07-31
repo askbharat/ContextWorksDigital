@@ -3416,6 +3416,166 @@ html {
   content: none;
 }
 
+.abn-preview-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.abn-preview-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 61, 145, 0.22);
+  background: #f4f8ff;
+  color: #0b3d91;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.abn-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.abn-preview-card {
+  border: 1px solid #d7e4f2;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.abn-preview-card h3 {
+  margin: 0 0 0.8rem;
+  font-size: 1.08rem;
+  color: #17355b;
+}
+
+.abn-preview-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.abn-preview-timeline li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.abn-preview-step {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0b3d91, #0f766e);
+}
+
+.abn-preview-timeline h4 {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #183c63;
+}
+
+.abn-preview-timeline p {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #38516f;
+}
+
+.abn-prototype-shell {
+  border: 1px solid #ccddee;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #f9fbfe;
+}
+
+.abn-prototype-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  background: #edf3fa;
+  border-bottom: 1px solid #d5e4f3;
+  color: #294a6f;
+  font-size: 0.86rem;
+}
+
+.abn-prototype-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #7f99b7;
+}
+
+.abn-prototype-body {
+  padding: 0.8rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.abn-prototype-metric {
+  border: 1px solid #d6e4f1;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  padding: 0.7rem;
+}
+
+.abn-prototype-metric p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #4a6380;
+}
+
+.abn-prototype-metric strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  color: #17385f;
+}
+
+.abn-prototype-list {
+  border: 1px solid #d6e4f1;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.abn-prototype-list div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.58rem 0.7rem;
+  border-bottom: 1px solid #e5eef7;
+  font-size: 0.88rem;
+  color: #294c70;
+}
+
+.abn-prototype-list div:last-child {
+  border-bottom: 0;
+}
+
+.abn-prototype-list em {
+  font-style: normal;
+  color: #0f766e;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
 .abn-patient-cap-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3979,6 +4139,10 @@ html {
 
   .abn-journey-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .abn-preview-grid {
+    grid-template-columns: 1fr;
   }
 
   .patient-capabilities {
