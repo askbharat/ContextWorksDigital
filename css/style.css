@@ -976,6 +976,145 @@ nav a.active {
   border-color: #c7dcf8;
 }
 
+/* AskBharatNow Visual Section */
+.abn-visual-section {
+  padding-top: 38px;
+}
+
+.abn-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 22px;
+}
+
+.abn-visual-card {
+  background: #ffffff;
+  border: 1px solid #d9e4f2;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 24px rgba(16, 35, 62, 0.07);
+}
+
+.abn-visual-card h3 {
+  margin: 0 0 14px;
+  font-size: 21px;
+  color: #12395f;
+}
+
+.abn-visual-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d7e2ef;
+  background: #f8fbff;
+  padding: 12px;
+}
+
+.abn-dashboard-preview {
+  border: 1px solid #d2e0f1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+}
+
+.abn-dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #edf4fd;
+  color: #1d456f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.abn-dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+}
+
+.abn-dashboard-metrics div {
+  border: 1px solid #d7e5f5;
+  border-radius: 10px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+.abn-dashboard-metrics strong {
+  display: block;
+  color: #0f3d64;
+  font-size: 19px;
+  line-height: 1.2;
+}
+
+.abn-dashboard-metrics span {
+  color: #4a6582;
+  font-size: 12px;
+}
+
+.abn-dashboard-table {
+  padding: 0 12px 12px;
+}
+
+.abn-dashboard-table div {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr auto;
+  gap: 10px;
+  border-top: 1px solid #e1ebf8;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #294a6d;
+}
+
+.abn-dashboard-table div span:last-child {
+  font-weight: 700;
+  color: #0f3d64;
+}
+
+.abn-vault-preview-card {
+  margin-top: 20px;
+}
+
+.abn-vault-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.abn-vault-step {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #dbe7f4;
+  border-radius: 12px;
+  background: #f9fcff;
+}
+
+.abn-vault-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff7043;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.abn-vault-step strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f3d64;
+  font-size: 14px;
+}
+
+.abn-vault-step p {
+  margin: 0;
+  color: #35597f;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 /* ========== Featured Use Cases Section ========== */
 .use-case-cards {
   display: grid;
@@ -1361,6 +1500,11 @@ nav a.active {
     max-width: 760px;
     margin: 0 auto;
   }
+
+  .abn-visual-grid,
+  .abn-vault-preview {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1393,6 +1537,20 @@ nav a.active {
 
   .business-pathway-card p {
     font-size: 16px;
+  }
+
+  .abn-visual-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .abn-visual-card h3 {
+    font-size: 19px;
+  }
+
+  .abn-dashboard-table div {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }
 
